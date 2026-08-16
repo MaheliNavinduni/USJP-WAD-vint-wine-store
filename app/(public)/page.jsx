@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button';
 import Reveal from '@/components/ui/Reveal';
 import Icon from '@/components/ui/Icon';
 import WineCard from '@/components/wine/WineCard';
-import { getFeaturedProducts, getProductBySlug, products } from '@/data/products';
+import { getFeaturedProducts, getProductBySlug } from '@/data/products';
 import { VALUE_PROPS } from '@/data/site';
 
 export const metadata = {
@@ -41,11 +41,6 @@ export default function HomePage() {
             </Button>
           </>
         }
-        chips={[
-          { value: products.length, label: 'handcrafted wines' },
-          { value: 'Small', label: 'batch, always' },
-          { value: 'Island', label: 'grown ingredients' },
-        ]}
         scrollTo="finest-selection"
       />
 
