@@ -41,7 +41,6 @@ export default function HomePage() {
             </Button>
           </>
         }
-        scrollTo="finest-selection"
       />
 
       {/* ---------------------------------------------------------------- */}
