@@ -250,106 +250,6 @@ const PAIRINGS = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Home — About Us still life                                           */
-/* ------------------------------------------------------------------ */
-
-/**
- * A warm, hand-drawn cellar scene for the About Us panel on the home page:
- * the demijohn homemade wine ferments in, a finished bottle, and two glasses
- * on a table. Fills its container rather than floating like a product shot.
- */
-function aboutSvg() {
-  const line = PALETTE.burgundy;
-
-  const demijohn = `
-    <path d="M0 0C-44 0-78-28-78-68c0-38 26-64 56-72v-30h44v30c30 8 56 34 56 72 0 40-34 68-78 68Z" />
-    <path d="M-8-170v-16h16v16" />
-    <path d="M-7-186v-13a7 7 0 0 1 14 0v13" />
-    <path d="M-74-52h148" />`;
-
-  // Wine sitting inside the demijohn, below the fill line.
-  const demijohnWine = `
-    <path d="M0 0C-44 0-78-28-78-68c0-6 1-11 2-16h152c1 5 2 10 2 16 0 40-34 68-78 68Z" />`;
-
-  const bottle = `
-    <path d="M-26 0v-95c0-23 16-31 16-50v-51h20v51c0 19 16 27 16 50V0Z" />
-    <rect x="-11" y="-208" width="22" height="12" rx="3" />
-    <path d="M-26-64h52" />`;
-
-  const glass = `
-    <path d="M-20 0h40" />
-    <path d="M0 0v-50" />
-    <path d="M-28-118h56l-6 48a22 22 0 0 1-44 0Z" />`;
-
-  const glassWine = `
-    <path d="M-25-98h50l-4 28a21 21 0 0 1-42 0Z" />`;
-
-  const grape = (cx, cy, r) => `<circle cx="${cx}" cy="${cy}" r="${r}" />`;
-  const grapes = [
-    grape(-26, -14, 13), grape(0, -18, 13), grape(26, -13, 13),
-    grape(-13, 8, 13), grape(13, 9, 13), grape(0, 30, 12),
-  ].join('');
-
-  return `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" width="800" height="640" role="img"
-     aria-label="A fermenting demijohn, a VINT bottle and two glasses on a cellar table">
-  <defs>
-    <linearGradient id="about-bg" x1="0" y1="0" x2="0.7" y2="1">
-      <stop offset="0%" stop-color="${PALETTE.ivory}" />
-      <stop offset="55%" stop-color="#efe6d2" />
-      <stop offset="100%" stop-color="${PALETTE.tan}" />
-    </linearGradient>
-    <radialGradient id="about-glow" cx="32%" cy="26%" r="58%">
-      <stop offset="0%" stop-color="#fff8e6" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#fff8e6" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="about-warm" cx="78%" cy="72%" r="55%">
-      <stop offset="0%" stop-color="${PALETTE.gold}" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="${PALETTE.gold}" stop-opacity="0" />
-    </radialGradient>
-    <filter id="about-grain">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="4" />
-      <feColorMatrix type="saturate" values="0" />
-    </filter>
-  </defs>
-
-  <rect width="800" height="640" fill="url(#about-bg)" />
-  <rect width="800" height="640" fill="url(#about-glow)" />
-  <rect width="800" height="640" fill="url(#about-warm)" />
-
-  <!-- Table surface -->
-  <path d="M0 470h800" stroke="${line}" stroke-width="2.5" opacity="0.4" />
-  <rect y="470" width="800" height="170" fill="${PALETTE.burgundy}" opacity="0.05" />
-
-  <!-- Soft shadows so the objects sit on the table rather than float -->
-  <g fill="${PALETTE.burgundy}" opacity="0.1">
-    <ellipse cx="248" cy="472" rx="88" ry="9" />
-    <ellipse cx="452" cy="472" rx="34" ry="7" />
-    <ellipse cx="576" cy="472" rx="26" ry="6" />
-    <ellipse cx="648" cy="472" rx="26" ry="6" />
-  </g>
-
-  <!-- Wine inside the glass and the demijohn -->
-  <g fill="${PALETTE.burgundyBright}" opacity="0.55">
-    <g transform="translate(248 470)">${demijohnWine}</g>
-    <g transform="translate(576 470)">${glassWine}</g>
-  </g>
-
-  <!-- Line work -->
-  <g fill="none" stroke="${line}" stroke-width="3" stroke-linecap="round"
-     stroke-linejoin="round" opacity="0.82">
-    <g transform="translate(248 470)">${demijohn}</g>
-    <g transform="translate(452 470)">${bottle}</g>
-    <g transform="translate(576 470)">${glass}</g>
-    <g transform="translate(648 470)">${glass}</g>
-    <g transform="translate(128 432) scale(0.9)" opacity="0.75">${grapes}</g>
-  </g>
-
-  <rect width="800" height="640" filter="url(#about-grain)" opacity="0.045" />
-</svg>`;
-}
-
-/* ------------------------------------------------------------------ */
 /* Our Story gallery                                                    */
 /* ------------------------------------------------------------------ */
 
@@ -419,7 +319,5 @@ Object.entries(PAIRINGS).forEach(([key, label]) => {
 STORY.forEach((entry) => {
   write(`public/images/story/${entry.id}.svg`, storySvg(entry));
 });
-
-write('public/images/about/cellar-still-life.svg', aboutSvg());
 
 console.log('Done. Replace any of these with real photography at the same path.');

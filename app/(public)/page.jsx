@@ -126,10 +126,10 @@ export default function HomePage() {
 
             <Reveal className="vint-about__media" delay={120}>
               <Image
-                src="/images/about/cellar-still-life.svg"
-                alt="A fermenting demijohn, a VINT bottle and two glasses of wine on a cellar table"
-                width={800}
-                height={640}
+                src="/images/about/bottle-and-glass.png"
+                alt="A bottle of VINT beside a glass of red wine with the VINT name etched into it"
+                width={780}
+                height={624}
                 sizes="(max-width: 820px) 100vw, 520px"
               />
             </Reveal>
