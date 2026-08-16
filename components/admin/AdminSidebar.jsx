@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { LayoutDashboard, MessageSquare, Package, ClipboardList, ExternalLink } from 'lucide-react';
 
 import { SITE } from '@/data/site';
+import VintMark from '@/components/layout/VintMark';
 
 const LINKS = [
   { label: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
@@ -19,6 +20,9 @@ export default function AdminSidebar() {
   return (
     <aside className="vint-admin-sidebar">
       <div className="vint-admin-sidebar__brand">
+        <span className="vint-admin-sidebar__mark" aria-hidden="true">
+          <VintMark size={38} />
+        </span>
         <div>
           <span className="vint-admin-sidebar__wordmark">{SITE.name}</span>
           <span className="vint-admin-sidebar__tag">Estate Admin</span>

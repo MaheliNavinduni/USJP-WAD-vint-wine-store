@@ -45,16 +45,23 @@
   flex-shrink: 0;
 }
 
+/* The logo artwork already carries its own cream circle, so this is just a
+   round clipping frame rather than a badge drawn around an icon. */
 .vint-nav__mark {
   display: grid;
   place-items: center;
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: var(--vint-ivory-soft);
+  overflow: hidden;
   border: 1px solid var(--vint-warm-gray-deep);
-  color: var(--vint-burgundy);
   transition: transform var(--dur-base) var(--ease-out);
+}
+
+.vint-logo-mark {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .vint-nav__brand:hover .vint-nav__mark {

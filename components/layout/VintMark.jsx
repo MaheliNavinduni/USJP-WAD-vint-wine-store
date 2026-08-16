@@ -1,25 +1,25 @@
+import Image from 'next/image';
+
 /**
- * The small wine-glass logo mark that sits inside the navbar's circle.
- * Inline SVG so it inherits `currentColor` and never needs a network request.
+ * The VINT logo mark.
+ *
+ * The supplied artwork already includes its own cream circle, so this renders
+ * the image directly rather than drawing a badge around it.
+ *
+ * NOTE: the source file is only 48x48. It is sharp at the navbar's size on a
+ * standard display but softens on high-DPI screens. Drop a larger export in at
+ * public/images/brand/vint-logo.png (256px or more, same square shape) and
+ * everything using this component sharpens up with no code change.
  */
-export default function VintMark({ size = 24 }) {
+export default function VintMark({ size = 42 }) {
   return (
-    <svg
+    <Image
+      src="/images/brand/vint-logo.png"
+      alt=""
       width={size}
       height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M7 3h10l-1 6a4 4 0 0 1-8 0Z" />
-      <path d="M12 13v6" />
-      <path d="M8.5 21h7" />
-      <path d="M7.6 6.6h8.8" fill="none" />
-    </svg>
+      className="vint-logo-mark"
+      priority
+    />
   );
 }

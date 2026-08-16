@@ -35,7 +35,7 @@ export default function Navbar() {
         <div className="vint-nav__inner">
           <Link href="/" className="vint-nav__brand" aria-label={`${SITE.name} — home`}>
             <span className="vint-nav__mark" aria-hidden="true">
-              <VintMark size={24} />
+              <VintMark size={42} />
             </span>
             <span className="vint-nav__wordmark">{SITE.name}</span>
           </Link>

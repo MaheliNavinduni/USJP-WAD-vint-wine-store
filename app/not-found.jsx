@@ -27,9 +27,9 @@ export default function NotFound() {
         <Link
           href="/"
           aria-label="VINT — home"
-          style={{ color: 'var(--vint-burgundy)', marginBottom: 'var(--space-2xs)' }}
+          style={{ marginBottom: 'var(--space-2xs)', borderRadius: '50%', overflow: 'hidden' }}
         >
-          <VintMark size={40} />
+          <VintMark size={56} />
         </Link>
 
         <span className="vint-eyebrow">Error 404</span>
