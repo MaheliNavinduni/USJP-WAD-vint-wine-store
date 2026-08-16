@@ -6,7 +6,6 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import Button from '@/components/ui/Button';
 import Reveal from '@/components/ui/Reveal';
 import Icon from '@/components/ui/Icon';
-import { getProductBySlug } from '@/data/products';
 import { CRAFTSMANSHIP, SITE } from '@/data/site';
 
 export const metadata = {
@@ -40,8 +39,6 @@ const GALLERY = [
 ];
 
 export default function OurStoryPage() {
-  const heroBottle = getProductBySlug('heritage-red');
-
   return (
     <>
       <HeroSection
@@ -89,11 +86,11 @@ export default function OurStoryPage() {
 
             <Reveal className="vint-legacy__media" delay={120}>
               <Image
-                src={heroBottle.image}
-                alt={heroBottle.imageAlt}
-                width={320}
-                height={760}
-                sizes="(max-width: 820px) 70vw, 420px"
+                src="/images/story/legacy.jpg"
+                alt="Red wine being poured into a glass beside a dark bottle"
+                width={1000}
+                height={1242}
+                sizes="(max-width: 820px) 100vw, 520px"
               />
             </Reveal>
           </div>
