@@ -13,7 +13,8 @@ export default function CollectionPage() {
     <>
       <HeroSection
         variant="page"
-        image="/images/heroes/collection-hero.svg"
+        image="/images/heroes/collection-hero.jpg"
+        imageAlt="Wine glasses hanging above racked bottles in a dimly lit cellar"
         eyebrow="The Cellar"
         title="The Wine Collection"
         subtitle="Explore our small collection of carefully handcrafted homemade wines. Four bottles, each made in limited quantity and pressed by hand at the estate."

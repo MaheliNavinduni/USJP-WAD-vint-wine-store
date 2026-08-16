@@ -108,14 +108,6 @@ const GLASS = (x, y, scale = 1) => `
     </g>`;
 
 const HEROES = {
-  'collection-hero': {
-    blooms: [
-      { x: 1180, y: 300, rx: 460, ry: 380, color: PALETTE.burgundyBright, opacity: 0.85 },
-      { x: 320, y: 700, rx: 400, ry: 320, color: PALETTE.gold, opacity: 0.28 },
-      { x: 820, y: 120, rx: 300, ry: 220, color: '#c0392b', opacity: 0.3 },
-    ],
-    silhouette: [BOTTLE(1120, 330, 1.25), BOTTLE(1300, 380, 1), GLASS(940, 420, 1.1)].join(''),
-  },
   'story-hero': {
     blooms: [
       { x: 400, y: 260, rx: 480, ry: 400, color: PALETTE.burgundyBright, opacity: 0.7 },
