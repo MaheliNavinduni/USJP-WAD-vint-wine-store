@@ -12,6 +12,23 @@
   gap: var(--space-md);
 }
 
+/* Cards are wrapped in a plain <div> by Reveal. That wrapper stretches to the
+   grid row, but the card inside it sizes to its own content, so a shorter
+   description left one card visibly stubbier than its neighbours. Making the
+   wrapper a flex container passes the row height through to the card. */
+.vint-featured-grid > *,
+.vint-collection-grid > *,
+.vint-glass-grid > * {
+  display: flex;
+}
+
+.vint-featured-grid > * > *,
+.vint-collection-grid > * > *,
+.vint-glass-grid > * > * {
+  flex: 1;
+  min-width: 0;
+}
+
 /* --------------------------------------------------------------------------
    Home — Why Choose VINT
    -------------------------------------------------------------------------- */
