@@ -89,11 +89,11 @@
   margin-bottom: var(--space-sm);
 }
 
-/* Full-bleed illustrated panel rather than a floating product shot — the
-   artwork carries its own lighting, so no glow or drop-shadow is layered on. */
+/* Full-bleed photographic panel rather than a floating product shot. Portrait
+   4:5 to match the source photograph, so it needs almost no cropping. */
 .vint-about__media {
   position: relative;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 4 / 5;
   background: var(--vint-cream-deep);
   border: 1px solid var(--vint-border-soft);
   border-radius: var(--radius-lg);

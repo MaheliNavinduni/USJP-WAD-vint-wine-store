@@ -172,6 +172,11 @@ the real figures differ.
 
 Real product photography is already in place for all four bottles and all three glass sets.
 
+`public/images/about/wine-and-grapes.jpg` is a stock photograph from [Pexels](https://www.pexels.com)
+(photographer: Cihat Alp), resized from 6127×8169 to 1000×1250. Pexels images are free for
+commercial use and need no attribution, but note the source if your coursework asks you to cite
+assets.
+
 Everything below is a **generated placeholder** — on-brand, but not a photograph. Drop a real image
 in at the same path to replace it (a `.jpg` is fine, just update the path in the page):
 
