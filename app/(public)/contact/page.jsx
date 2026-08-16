@@ -21,7 +21,9 @@ export default function ContactPage() {
     <>
       <HeroSection
         variant="page"
-        image="/images/heroes/contact-hero.svg"
+        image="/images/heroes/contact-hero.jpg"
+        imageAlt="Red wine being poured into a glass on an evening table strung with warm lights"
+        photo
         eyebrow="Contact VINT"
         title="Let's Raise a Glass Together"
         subtitle="We'd love to hear from you. Whether you have a question about our homemade wines, want to know more, or would like to place an order, feel free to get in touch."
