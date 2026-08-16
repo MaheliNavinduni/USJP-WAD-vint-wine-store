@@ -1,0 +1,512 @@
+/* ==========================================================================
+   VINT — Admin area
+   Same palette as the public site, but tuned for density and legibility:
+   dark sidebar, cream content area, burgundy accents.
+   ========================================================================== */
+
+.vint-admin {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-height: 100dvh;
+  background: var(--vint-cream);
+}
+
+/* --------------------------------------------------------------------------
+   Sidebar
+   -------------------------------------------------------------------------- */
+
+.vint-admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
+  background: var(--vint-black);
+  color: var(--vint-text-on-dark);
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow-y: auto;
+}
+
+.vint-admin-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid rgba(247, 241, 227, 0.14);
+}
+
+.vint-admin-sidebar__wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.vint-admin-sidebar__tag {
+  display: block;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: rgba(247, 241, 227, 0.5);
+}
+
+.vint-admin-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xs);
+  flex: 1;
+}
+
+.vint-admin-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs) var(--space-xs);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: rgba(247, 241, 227, 0.68);
+  border-radius: var(--radius-sm);
+  border-left: 2px solid transparent;
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.vint-admin-sidebar__link:hover {
+  background: rgba(247, 241, 227, 0.07);
+  color: var(--vint-text-on-dark);
+}
+
+/* Same specificity note as the filter pills: hover must not wash out the
+   active link's burgundy highlight. */
+.vint-admin-sidebar__link--active,
+.vint-admin-sidebar__link--active:hover {
+  background: var(--vint-burgundy);
+  border-left-color: var(--vint-gold);
+  color: var(--vint-text-on-dark);
+}
+
+.vint-admin-sidebar__footer {
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(247, 241, 227, 0.14);
+  font-size: var(--text-xs);
+  color: rgba(247, 241, 227, 0.45);
+}
+
+.vint-admin-sidebar__footer a:hover {
+  color: var(--vint-text-on-dark);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Content area
+   -------------------------------------------------------------------------- */
+
+.vint-admin-main {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  min-width: 0;
+}
+
+.vint-admin-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--vint-border-soft);
+}
+
+.vint-admin-header__title {
+  font-size: var(--text-2xl);
+  margin: 0;
+}
+
+.vint-admin-header__sub {
+  color: var(--vint-text-muted);
+  font-size: var(--text-base);
+}
+
+.vint-admin-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--vint-text-muted);
+  margin-bottom: var(--space-2xs);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.vint-admin-back:hover {
+  color: var(--vint-burgundy);
+}
+
+/* --------------------------------------------------------------------------
+   Stat tiles
+   -------------------------------------------------------------------------- */
+
+.vint-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.vint-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--vint-ivory-soft);
+  border: 1px solid var(--vint-border-soft);
+  border-radius: var(--radius-md);
+  transition:
+    transform var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+}
+
+.vint-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.vint-stat__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  color: var(--vint-burgundy);
+  background: var(--vint-cream-deep);
+}
+
+.vint-stat__label {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--vint-text-faint);
+}
+
+.vint-stat__value {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--vint-burgundy);
+  line-height: 1.15;
+}
+
+.vint-stat__hint {
+  font-size: var(--text-xs);
+  color: var(--vint-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Panels & tables
+   -------------------------------------------------------------------------- */
+
+.vint-panel {
+  background: var(--vint-ivory-soft);
+  border: 1px solid var(--vint-border-soft);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+}
+
+.vint-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--vint-border-soft);
+}
+
+.vint-panel__title {
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+.vint-panel__body {
+  padding: var(--space-md);
+}
+
+/* Horizontal scroll container so wide tables never break the page layout. */
+.vint-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vint-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-base);
+  min-width: 720px;
+}
+
+.vint-table th {
+  padding: var(--space-xs) var(--space-sm);
+  text-align: left;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--vint-text-muted);
+  background: var(--vint-cream-deep);
+  white-space: nowrap;
+}
+
+.vint-table td {
+  padding: var(--space-sm);
+  border-top: 1px solid var(--vint-border-soft);
+  vertical-align: middle;
+}
+
+.vint-table tbody tr {
+  transition: background var(--dur-fast) var(--ease-out);
+}
+
+.vint-table tbody tr:hover {
+  background: var(--vint-cream-deep);
+}
+
+.vint-table__strong {
+  font-weight: 700;
+  color: var(--vint-burgundy);
+}
+
+.vint-table__muted {
+  color: var(--vint-text-muted);
+  font-size: var(--text-sm);
+}
+
+.vint-table__num {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.vint-table__thumb {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 58px;
+  padding: 4px;
+  background: var(--vint-cream-deep);
+  border-radius: var(--radius-xs);
+}
+
+.vint-table__thumb img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.vint-table__actions {
+  display: flex;
+  gap: var(--space-3xs);
+  justify-content: flex-end;
+}
+
+.vint-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  color: var(--vint-text-muted);
+  border: 1px solid var(--vint-border-soft);
+  transition:
+    background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.vint-icon-btn:hover {
+  background: var(--vint-burgundy);
+  border-color: var(--vint-burgundy);
+  color: var(--vint-text-on-dark);
+}
+
+.vint-icon-btn--danger:hover {
+  background: var(--vint-danger);
+  border-color: var(--vint-danger);
+}
+
+/* --------------------------------------------------------------------------
+   Admin forms
+   -------------------------------------------------------------------------- */
+
+.vint-admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.vint-fieldset {
+  border: 1px solid var(--vint-border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  background: var(--vint-ivory-soft);
+}
+
+.vint-fieldset__legend {
+  padding-inline: var(--space-2xs);
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--vint-burgundy);
+}
+
+.vint-fieldset__hint {
+  font-size: var(--text-sm);
+  color: var(--vint-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+/* Image drop zone on the add/edit product screen. */
+.vint-upload {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border: 1.5px dashed var(--vint-border);
+  border-radius: var(--radius-sm);
+  background: var(--vint-cream-deep);
+  transition: border-color var(--dur-base) var(--ease-out);
+}
+
+.vint-upload:hover {
+  border-color: var(--vint-burgundy);
+}
+
+.vint-upload__preview {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 84px;
+  height: 104px;
+  background: var(--vint-ivory-soft);
+  border-radius: var(--radius-xs);
+}
+
+.vint-upload__preview img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.vint-admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  justify-content: flex-end;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--vint-border-soft);
+}
+
+/* Definition list used on the order detail screen. */
+.vint-dl {
+  display: grid;
+  gap: var(--space-2xs);
+  margin: 0;
+}
+
+.vint-dl__row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: var(--space-sm);
+  padding-block: var(--space-2xs);
+  border-bottom: 1px solid var(--vint-border-soft);
+}
+
+.vint-dl__row:last-child {
+  border-bottom: none;
+}
+
+.vint-dl__row dt {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--vint-text-faint);
+}
+
+.vint-dl__row dd {
+  margin: 0;
+  color: var(--vint-text);
+}
+
+.vint-admin-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .vint-admin-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .vint-admin {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Sidebar becomes a horizontal scrolling strip above the content. */
+  .vint-admin-sidebar {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
+    overflow-x: auto;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .vint-admin-sidebar__brand {
+    padding-bottom: 0;
+    border-bottom: none;
+    flex-shrink: 0;
+  }
+
+  .vint-admin-sidebar__nav {
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .vint-admin-sidebar__link {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+  }
+
+  .vint-admin-sidebar__link--active {
+    border-left: none;
+    border-bottom-color: var(--vint-gold);
+  }
+
+  .vint-admin-sidebar__footer {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .vint-dl__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-3xs);
+  }
+}

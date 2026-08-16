@@ -1,0 +1,113 @@
+/* ==========================================================================
+   VINT — Design tokens
+   Every colour, space, radius, shadow and easing used anywhere on the site is
+   declared here. Components never hard-code a hex value.
+   ========================================================================== */
+
+:root {
+  /* ---------- Brand palette ---------- */
+  --vint-cream: #f6f5d8;          /* page background */
+  --vint-cream-deep: #ededcf;     /* card image wells, alternating bands */
+  --vint-ivory: #f7f1e3;          /* panels, forms */
+  --vint-ivory-soft: #fbf8ee;     /* raised cards on cream */
+  --vint-warm-gray: #ddd8d2;      /* navbar, subtle fills */
+  --vint-warm-gray-deep: #c9c2b9; /* borders on warm surfaces */
+
+  --vint-burgundy: #430005;       /* primary */
+  --vint-burgundy-mid: #5b0b10;   /* hover / gradients */
+  --vint-burgundy-bright: #7a1520;/* accents, focus rings */
+  --vint-black: #0d0d0d;          /* footer, admin sidebar */
+  --vint-gold: #b08d34;           /* rating stars, fine rules */
+
+  /* ---------- Text ---------- */
+  --vint-text: #34211c;
+  --vint-text-muted: #6f5c53;
+  --vint-text-faint: #927f75;
+  --vint-text-on-dark: #f7f1e3;
+  --vint-text-on-dark-muted: rgba(247, 241, 227, 0.76);
+
+  /* ---------- Lines & surfaces ---------- */
+  --vint-border: rgba(67, 0, 5, 0.14);
+  --vint-border-soft: rgba(67, 0, 5, 0.08);
+  --vint-border-strong: rgba(67, 0, 5, 0.28);
+  --vint-surface: var(--vint-ivory-soft);
+
+  /* ---------- Status ---------- */
+  --vint-success: #2f6b3f;
+  --vint-success-soft: #e3f0e6;
+  --vint-warning: #8a5a12;
+  --vint-warning-soft: #f8eeda;
+  --vint-info: #2c5670;
+  --vint-info-soft: #e2edf3;
+  --vint-danger: #8c1d1d;
+  --vint-danger-soft: #f7e4e4;
+
+  /* ---------- Typography ---------- */
+  --font-serif: var(--font-playfair), 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Fluid type scale — clamp() keeps headings readable on phones without
+     needing a media query for every size. */
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1rem;
+  --text-lg: clamp(1.0625rem, 0.4vw + 0.98rem, 1.1875rem);
+  --text-xl: clamp(1.375rem, 1vw + 1.15rem, 1.75rem);
+  --text-2xl: clamp(1.75rem, 1.8vw + 1.35rem, 2.5rem);
+  --text-3xl: clamp(2.125rem, 3vw + 1.4rem, 3.25rem);
+  --text-4xl: clamp(2.5rem, 5vw + 1.25rem, 4.5rem);
+
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.16em;
+  --leading-tight: 1.12;
+  --leading-snug: 1.35;
+  --leading-normal: 1.7;
+
+  /* ---------- Spacing ---------- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+
+  /* Vertical rhythm between major page sections. */
+  --section-y: clamp(3.5rem, 7vw, 7rem);
+  --container-max: 1200px;
+  --container-pad: clamp(1.25rem, 4vw, 2.5rem);
+
+  /* ---------- Radii ---------- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-xs: 0 1px 2px rgba(52, 33, 28, 0.06);
+  --shadow-sm: 0 2px 8px rgba(52, 33, 28, 0.07);
+  --shadow-md: 0 8px 24px rgba(52, 33, 28, 0.09);
+  --shadow-lg: 0 18px 48px rgba(52, 33, 28, 0.13);
+  --shadow-hero: 0 28px 80px rgba(13, 5, 6, 0.45);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 280ms;
+  --dur-slow: 520ms;
+
+  /* ---------- Layers ---------- */
+  --z-base: 1;
+  --z-sticky: 50;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+}

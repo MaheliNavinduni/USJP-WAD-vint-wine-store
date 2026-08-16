@@ -1,0 +1,286 @@
+/* ==========================================================================
+   VINT — Hero section
+   Adapted from the HomeHero "glass hero" pattern: a full-bleed photograph, a
+   dark brand-coloured gradient over it, and a frosted translucent panel that
+   carries the copy. Same structure, VINT's burgundy/cream palette.
+   ========================================================================== */
+
+.vint-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--vint-text-on-dark);
+  /* Gradient base shows through if a hero photo has not been supplied yet, so
+     the section never renders as an empty black box. */
+  background:
+    radial-gradient(120% 90% at 15% 10%, var(--vint-burgundy-mid), transparent 60%),
+    linear-gradient(140deg, var(--vint-burgundy) 0%, var(--vint-black) 100%);
+}
+
+.vint-hero--home {
+  min-height: min(88vh, 780px);
+}
+
+.vint-hero--page {
+  min-height: clamp(380px, 56vh, 560px);
+}
+
+.vint-hero--compact {
+  min-height: clamp(280px, 42vh, 420px);
+}
+
+/* ---------- Background photograph ---------- */
+
+.vint-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  animation: vint-hero-zoom 1600ms var(--ease-out) both;
+}
+
+/* The supplied home hero photo is mirrored, which renders the VINT label
+   backwards. Flipping the background layer (not its contents) corrects it. */
+.vint-hero__bg--flip {
+  transform: scaleX(-1);
+  animation: none;
+}
+
+.vint-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    118deg,
+    rgba(67, 0, 5, 0.94) 0%,
+    rgba(67, 0, 5, 0.78) 38%,
+    rgba(13, 13, 13, 0.62) 72%,
+    rgba(13, 13, 13, 0.5) 100%
+  );
+}
+
+/* A soft vignette at the bottom lets the page below melt into the hero. */
+.vint-hero__overlay::after {
+  content: '';
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(13, 13, 13, 0.55), transparent);
+}
+
+.vint-hero__inner {
+  position: relative;
+  z-index: var(--z-base);
+  width: 100%;
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+/* ---------- Layout variants ---------- */
+
+.vint-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.vint-hero__grid--single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.vint-hero--centered .vint-hero__panel {
+  margin-inline: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.vint-hero--centered .vint-hero__actions {
+  justify-content: center;
+}
+
+/* ---------- Frosted content panel ---------- */
+
+.vint-hero__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  max-width: 640px;
+  padding: clamp(1.75rem, 3.5vw, 3rem);
+  background: rgba(43, 2, 8, 0.34);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  border: 1px solid rgba(247, 241, 227, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hero);
+}
+
+.vint-hero__title {
+  font-size: var(--text-4xl);
+  color: var(--vint-text-on-dark);
+  margin: 0;
+}
+
+.vint-hero--page .vint-hero__title,
+.vint-hero--compact .vint-hero__title {
+  font-size: var(--text-3xl);
+}
+
+.vint-hero__subtitle {
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--vint-text-on-dark-muted);
+  max-width: 56ch;
+  margin: 0;
+}
+
+.vint-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* ---------- Trust chips ---------- */
+
+.vint-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  margin-top: var(--space-2xs);
+}
+
+.vint-hero__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  padding: 0.4rem 0.85rem;
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--vint-text-on-dark-muted);
+  background: rgba(247, 241, 227, 0.08);
+  border: 1px solid rgba(247, 241, 227, 0.18);
+  border-radius: var(--radius-pill);
+}
+
+.vint-hero__chip strong {
+  color: var(--vint-text-on-dark);
+  font-weight: 700;
+}
+
+/* ---------- Floating bottle visual (home only) ---------- */
+
+.vint-hero__visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 420px;
+}
+
+.vint-hero__bottle {
+  width: min(100%, 340px);
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6));
+  animation: vint-float 7s var(--ease-in-out) infinite;
+}
+
+/* Warm halo behind the bottle so it separates from the photograph. */
+.vint-hero__visual::before {
+  content: '';
+  position: absolute;
+  width: min(90%, 380px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(176, 141, 52, 0.3), transparent 68%);
+  filter: blur(8px);
+}
+
+/* ---------- Scroll cue ---------- */
+
+.vint-hero__scroll-cue {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  translate: -50% 0;
+  z-index: var(--z-base);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3xs);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--vint-text-on-dark-muted);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.vint-hero__scroll-cue:hover {
+  color: var(--vint-text-on-dark);
+}
+
+.vint-hero__scroll-cue svg {
+  animation: vint-float 2.6s var(--ease-in-out) infinite;
+}
+
+/* ---------- Entrance stagger ---------- */
+
+.vint-hero__panel > * {
+  animation: vint-fade-up var(--dur-slow) var(--ease-out) both;
+}
+
+.vint-hero__panel > *:nth-child(1) { animation-delay: 120ms; }
+.vint-hero__panel > *:nth-child(2) { animation-delay: 220ms; }
+.vint-hero__panel > *:nth-child(3) { animation-delay: 320ms; }
+.vint-hero__panel > *:nth-child(4) { animation-delay: 420ms; }
+.vint-hero__panel > *:nth-child(5) { animation-delay: 520ms; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .vint-hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* On a phone the bottle sits above the copy and shrinks, rather than being
+     squeezed into a column beside it. Capping the height (not the width) stops
+     a tall bottle photo from pushing the headline off the first screen. */
+  .vint-hero__visual {
+    order: -1;
+    min-height: 0;
+  }
+
+  .vint-hero__bottle {
+    width: auto;
+    max-height: 42vh;
+  }
+
+  .vint-hero__panel {
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .vint-hero--home {
+    min-height: auto;
+  }
+
+  .vint-hero__actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vint-hero__scroll-cue {
+    display: none;
+  }
+}
+
+/* backdrop-filter is well supported, but if it is not the panel still needs to
+   be readable — fall back to a solid burgundy wash. */
+@supports not (backdrop-filter: blur(4px)) {
+  .vint-hero__panel {
+    background: rgba(43, 2, 8, 0.82);
+  }
+}
