@@ -14,7 +14,9 @@ export default function OrderPage() {
     <>
       <HeroSection
         variant="compact"
-        image="/images/heroes/order-hero.svg"
+        image="/images/heroes/order-hero.jpg"
+        imageAlt="A row of wine glasses on a bar with wine being poured beside a lit candle"
+        photo
         eyebrow="Guest Checkout"
         title="Place Your Order"
         subtitle="Enter your details below to request a purchase. Our team will confirm availability, delivery and payment arrangements."
