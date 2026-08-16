@@ -119,11 +119,11 @@ export default function WineGlassesPage() {
 
               <div className="vint-quality__media">
                 <Image
-                  src="/images/glasses/varietal-tasting-set.png"
-                  alt="Close detail of hand-blown VINT tasting glasses"
-                  width={720}
-                  height={450}
-                  sizes="(max-width: 860px) 100vw, 600px"
+                  src="/images/glasses/glassblowing.jpg"
+                  alt="A glassmaker shaping a glowing wine glass by hand with tongs"
+                  width={321}
+                  height={442}
+                  sizes="(max-width: 1040px) 100vw, 280px"
                 />
               </div>
             </Reveal>

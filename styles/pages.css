@@ -608,9 +608,30 @@
   box-shadow: var(--shadow-lg);
 }
 
+/* Copy beside the photograph rather than above it. The craftsmanship shot is
+   portrait and only 321px wide, so a full-width landscape slot would both crop
+   it badly and upscale it into mush. In a ~280px column it renders at close to
+   native size and stays sharp. */
 .vint-quality__card--feature {
   grid-row: span 2;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 280px);
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: center;
+}
+
+.vint-quality__card--feature .vint-quality__media {
+  aspect-ratio: 321 / 442;
+}
+
+@media (max-width: 1040px) {
+  .vint-quality__card--feature {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vint-quality__card--feature .vint-quality__media {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 .vint-quality__side {
