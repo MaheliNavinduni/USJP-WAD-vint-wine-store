@@ -31,21 +31,10 @@ export default function WineGlassesPage() {
       />
 
       {/* ---------------------------------------------------------------- */}
-      {/* Banner + collection                                              */}
+      {/* The collection                                                   */}
       {/* ---------------------------------------------------------------- */}
       <section className="vint-section" id="glass-grid">
         <div className="vint-container">
-          <Reveal className="vint-glass-banner">
-            <Image
-              src="/images/glasses/glassware-banner.png"
-              alt="The full VINT glassware collection photographed together"
-              width={1280}
-              height={1280}
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              priority
-            />
-          </Reveal>
-
           <SectionHeading
             eyebrow="Three Sets"
             title="Sip in Style"

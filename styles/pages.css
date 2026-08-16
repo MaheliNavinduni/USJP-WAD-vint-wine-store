@@ -471,24 +471,6 @@
    Wine glasses
    -------------------------------------------------------------------------- */
 
-.vint-glass-banner {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  margin-bottom: var(--space-2xl);
-  box-shadow: var(--shadow-md);
-}
-
-.vint-glass-banner img {
-  width: 100%;
-  height: auto;
-  transition: transform 1.2s var(--ease-out);
-}
-
-.vint-glass-banner:hover img {
-  transform: scale(1.02);
-}
-
 .vint-glass-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
