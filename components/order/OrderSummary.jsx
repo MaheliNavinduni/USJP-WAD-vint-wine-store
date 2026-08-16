@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { Info } from 'lucide-react';
+
 import { formatPrice } from '@/data/products';
 
 /**
@@ -16,8 +18,9 @@ export default function OrderSummary({ item, quantity }) {
         <>
           <div className="vint-summary__item">
             <div className="vint-summary__thumb">
-              <Image src={item.image} alt={item.imageAlt} width={84} height={104} />
+              <Image src={item.image} alt={item.imageAlt} width={96} height={120} />
             </div>
+
             <div>
               <span className="vint-summary__type">{item.category}</span>
               <p className="vint-summary__name">{item.name}</p>
@@ -27,7 +30,7 @@ export default function OrderSummary({ item, quantity }) {
             </div>
           </div>
 
-          <dl>
+          <dl className="vint-summary__totals">
             <div className="vint-summary__row">
               <dt>Subtotal</dt>
               <dd>{formatPrice(subtotal)}</dd>
@@ -42,13 +45,8 @@ export default function OrderSummary({ item, quantity }) {
             </div>
           </dl>
 
-          <p
-            style={{
-              marginTop: 'var(--space-md)',
-              fontSize: 'var(--text-sm)',
-              color: 'var(--vint-text-muted)',
-            }}
-          >
+          <p className="vint-note vint-summary__note">
+            <Info size={18} aria-hidden="true" />
             Payment arrangements will be confirmed by our team when they contact you.
           </p>
         </>
