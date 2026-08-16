@@ -61,6 +61,25 @@
   );
 }
 
+/* The home hero sits on a real photograph rather than the generated artwork the
+   other pages use, so it can carry a lighter wash and a softer panel blur and
+   still keep cream text well clear of AA contrast. */
+.vint-hero--home .vint-hero__overlay {
+  background: linear-gradient(
+    118deg,
+    rgba(67, 0, 5, 0.78) 0%,
+    rgba(67, 0, 5, 0.58) 40%,
+    rgba(13, 13, 13, 0.42) 74%,
+    rgba(13, 13, 13, 0.34) 100%
+  );
+}
+
+.vint-hero--home .vint-hero__panel {
+  background: rgba(43, 2, 8, 0.42);
+  backdrop-filter: blur(10px) saturate(115%);
+  -webkit-backdrop-filter: blur(10px) saturate(115%);
+}
+
 /* A soft vignette at the bottom lets the page below melt into the hero. */
 .vint-hero__overlay::after {
   content: '';
