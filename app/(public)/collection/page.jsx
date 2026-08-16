@@ -21,7 +21,6 @@ export default function CollectionPage() {
         imageAlt="Wine glasses hanging above racked bottles in a dimly lit cellar"
         title="The Wine Collection"
         subtitle="Explore our small collection of carefully handcrafted homemade wines. Four bottles, each made in limited quantity and pressed by hand at the estate."
-        scrollTo="wine-grid"
       />
 
       <section className="vint-section" id="wine-grid">

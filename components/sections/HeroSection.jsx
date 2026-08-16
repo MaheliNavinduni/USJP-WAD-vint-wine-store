@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { ChevronDown } from 'lucide-react';
 
 /**
  * The premium hero used at the top of every public page.
@@ -14,7 +13,6 @@ import { ChevronDown } from 'lucide-react';
  *                             is reversed, which renders the label backwards)
  * @param {object}  bottle     { src, alt } floating product image, home only
  * @param {Array}   chips      [{ label, value }] small trust pills
- * @param {string}  scrollTo   id of the section the scroll cue jumps to
  */
 export default function HeroSection({
   variant = 'page',
@@ -28,7 +26,6 @@ export default function HeroSection({
   chips,
   bottle,
   centered = false,
-  scrollTo,
 }) {
   const classes = [
     'vint-hero',
@@ -86,13 +83,6 @@ export default function HeroSection({
           )}
         </div>
       </div>
-
-      {scrollTo && (
-        <a href={`#${scrollTo}`} className="vint-hero__scroll-cue">
-          Scroll
-          <ChevronDown size={18} aria-hidden="true" />
-        </a>
-      )}
     </section>
   );
 }

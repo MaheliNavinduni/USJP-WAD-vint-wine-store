@@ -25,7 +25,6 @@ export default function ContactPage() {
         eyebrow="Contact VINT"
         title="Let's Raise a Glass Together"
         subtitle="We'd love to hear from you. Whether you have a question about our homemade wines, want to know more, or would like to place an order, feel free to get in touch."
-        scrollTo="contact-details"
       />
 
       {/* ---------------------------------------------------------------- */}

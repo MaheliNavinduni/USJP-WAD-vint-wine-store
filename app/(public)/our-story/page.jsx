@@ -55,7 +55,6 @@ export default function OurStoryPage() {
             See What We Make
           </Button>
         }
-        scrollTo="legacy"
       />
 
       {/* ---------------------------------------------------------------- */}

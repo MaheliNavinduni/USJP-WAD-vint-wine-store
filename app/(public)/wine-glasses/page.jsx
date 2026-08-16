@@ -27,7 +27,6 @@ export default function WineGlassesPage() {
         eyebrow="Glassware"
         title="Wine Glass Collection"
         subtitle="Designed to elevate every pour. Hand-blown, lead-free and shaped around the wine it is meant to hold."
-        scrollTo="glass-grid"
       />
 
       {/* ---------------------------------------------------------------- */}

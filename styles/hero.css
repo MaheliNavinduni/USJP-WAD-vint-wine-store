@@ -219,33 +219,6 @@
   filter: blur(8px);
 }
 
-/* ---------- Scroll cue ---------- */
-
-.vint-hero__scroll-cue {
-  position: absolute;
-  bottom: var(--space-md);
-  left: 50%;
-  translate: -50% 0;
-  z-index: var(--z-base);
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-3xs);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  color: var(--vint-text-on-dark-muted);
-  transition: color var(--dur-fast) var(--ease-out);
-}
-
-.vint-hero__scroll-cue:hover {
-  color: var(--vint-text-on-dark);
-}
-
-.vint-hero__scroll-cue svg {
-  animation: vint-float 2.6s var(--ease-in-out) infinite;
-}
-
 /* ---------- Entrance stagger ---------- */
 
 .vint-hero__panel > * {
@@ -292,10 +265,6 @@
     width: 100%;
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .vint-hero__scroll-cue {
-    display: none;
   }
 }
 
