@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img">
+  <defs>
+    <linearGradient id="order-hero-base" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#430005" />
+      <stop offset="55%" stop-color="#5b0b10" />
+      <stop offset="100%" stop-color="#0d0d0d" />
+    </linearGradient>
+    <radialGradient id="order-hero-bloom-0" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#7a1520" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#7a1520" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="order-hero-bloom-1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b08d34" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#b08d34" stop-opacity="0" />
+    </radialGradient>
+    <filter id="order-hero-soft" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="42" />
+    </filter>
+    <filter id="order-hero-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="7" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#order-hero-base)" />
+
+  <g filter="url(#order-hero-soft)">
+    <ellipse cx="820" cy="300" rx="560" ry="400" fill="url(#order-hero-bloom-0)" />
+    <ellipse cx="1360" cy="700" rx="380" ry="300" fill="url(#order-hero-bloom-1)" />
+  </g>
+
+  <g opacity="0.16" fill="none" stroke="#b08d34" stroke-width="2">
+    
+    <g transform="translate(1240 340) scale(1.2)">
+      <path d="M-26 0h52v190a26 26 0 0 1-26 26 26 26 0 0 1-26-26Z" />
+      <path d="M-9 0v-58a9 9 0 0 1 4-8h10a9 9 0 0 1 4 8V0Z" />
+      <path d="M-26 96h52" />
+    </g>
+    <g transform="translate(1420 440) scale(0.95)">
+      <path d="M-34 0h68l-8 62a26 26 0 0 1-52 0Z" />
+      <path d="M0 88v70" />
+      <path d="M-26 158h52" />
+    </g>
+  </g>
+
+  <rect width="1600" height="900" filter="url(#order-hero-grain)" opacity="0.05" />
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="600" height="800" role="img" aria-label="Two glasses of wine on a table">
+  <defs>
+    <linearGradient id="story-1-bg" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#5b0b10" />
+      <stop offset="100%" stop-color="#0d0d0d" />
+    </linearGradient>
+    <radialGradient id="story-1-glow" cx="42%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#b08d34" stop-opacity="0.42" />
+      <stop offset="100%" stop-color="#b08d34" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#story-1-bg)" />
+  <rect width="600" height="800" fill="url(#story-1-glow)" />
+
+  <g transform="translate(300 400)" fill="none" stroke="#f7f1e3"
+     stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
+    
+    <g transform="translate(-70 -110) scale(1.1)">
+      <path d="M-34 0h68l-8 62a26 26 0 0 1-52 0Z" />
+      <path d="M0 88v70" />
+      <path d="M-26 158h52" />
+    </g>
+    <g transform="translate(70 -90) scale(1.25)">
+      <path d="M-34 0h68l-8 62a26 26 0 0 1-52 0Z" />
+      <path d="M0 88v70" />
+      <path d="M-26 158h52" />
+    </g>
+  </g>
+</svg>

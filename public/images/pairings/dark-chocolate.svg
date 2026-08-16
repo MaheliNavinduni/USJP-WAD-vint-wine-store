@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Dark Chocolate">
+  <defs>
+    <linearGradient id="dark-chocolate-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f1e3" />
+      <stop offset="100%" stop-color="#ded2b8" />
+    </linearGradient>
+    <radialGradient id="dark-chocolate-glow" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#dark-chocolate-bg)" />
+  <rect width="400" height="300" fill="url(#dark-chocolate-glow)" />
+
+  <g transform="translate(200 128)" fill="none" stroke="#430005"
+     stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.72"
+     color="#430005">
+    
+    <rect x="-58" y="-38" width="116" height="76" rx="6" />
+    <path d="M-20 -38v76M20 -38v76M-58 0h116" />
+  </g>
+
+  <text x="200" y="248" text-anchor="middle" font-family="Georgia, serif" font-size="21"
+        fill="#430005" opacity="0.85">Dark Chocolate</text>
+  <rect x="150" y="262" width="100" height="1.5" fill="#b08d34" opacity="0.6" />
+</svg>

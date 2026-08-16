@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Roast Chicken">
+  <defs>
+    <linearGradient id="roast-chicken-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f1e3" />
+      <stop offset="100%" stop-color="#ded2b8" />
+    </linearGradient>
+    <radialGradient id="roast-chicken-glow" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="400" height="300" fill="url(#roast-chicken-bg)" />
+  <rect width="400" height="300" fill="url(#roast-chicken-glow)" />
+
+  <g transform="translate(200 128)" fill="none" stroke="#430005"
+     stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.72"
+     color="#430005">
+    
+    <path d="M-16 -34a34 34 0 1 1 42 46l-30 34a20 20 0 0 1-32-4 20 20 0 0 1 6-28Z" />
+    <path d="M-38 34c-10 8-24 8-30 0" />
+    <path d="M-24 46c-8 10-22 12-30 6" />
+  </g>
+
+  <text x="200" y="248" text-anchor="middle" font-family="Georgia, serif" font-size="21"
+        fill="#430005" opacity="0.85">Roast Chicken</text>
+  <rect x="150" y="262" width="100" height="1.5" fill="#b08d34" opacity="0.6" />
+</svg>
