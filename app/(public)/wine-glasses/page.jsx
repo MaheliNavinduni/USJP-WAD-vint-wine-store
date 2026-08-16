@@ -24,6 +24,7 @@ export default function WineGlassesPage() {
         variant="page"
         image="/images/heroes/glasses-hero.png"
         imageAlt="A row of VINT wine glasses arranged on a linen table"
+        photo
         eyebrow="Glassware"
         title="Wine Glass Collection"
         subtitle="Designed to elevate every pour. Hand-blown, lead-free and shaped around the wine it is meant to hold."

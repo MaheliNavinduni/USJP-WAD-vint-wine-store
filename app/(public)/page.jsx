@@ -26,6 +26,7 @@ export default function HomePage() {
         image="/images/heroes/home-hero.png"
         imageAlt="A glass of VINT red wine beside a bottle, lit warmly against dark grapes"
         flipImage
+        photo
         eyebrow="Est. 2020 · Avissawella, Sri Lanka"
         title="Handmade. Crafted with passion."
         subtitle="VINT is a small family cellar making wine the slow way — pressed by hand, fermented in small batches, and bottled only when it is ready. Four wines, made properly, for the moments worth sharing."

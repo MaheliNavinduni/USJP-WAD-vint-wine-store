@@ -61,10 +61,11 @@
   );
 }
 
-/* The home hero sits on a real photograph rather than the generated artwork the
-   other pages use, so it can carry a lighter wash and a softer panel blur and
-   still keep cream text well clear of AA contrast. */
-.vint-hero--home .vint-hero__overlay {
+/* Heroes backed by a real photograph carry a lighter wash and a softer panel
+   blur than those sitting on the flat generated artwork — otherwise the
+   photograph is flattened into the gradient and there was no point using it.
+   Applied via the `photo` prop on HeroSection. */
+.vint-hero--photo .vint-hero__overlay {
   background: linear-gradient(
     118deg,
     rgba(67, 0, 5, 0.58) 0%,
@@ -77,7 +78,7 @@
 /* The panel carries its own tint so the copy stays readable even though the
    wash behind it is light. Measured against the brightest part of the
    photograph, cream text sits around 11:1 — comfortably past AA. */
-.vint-hero--home .vint-hero__panel {
+.vint-hero--photo .vint-hero__panel {
   background: rgba(43, 2, 8, 0.52);
   backdrop-filter: blur(10px) saturate(115%);
   -webkit-backdrop-filter: blur(10px) saturate(115%);

@@ -11,6 +11,9 @@ import Image from 'next/image';
  * @param {string}  image      background photograph
  * @param {boolean} flipImage  mirrors the background (the supplied home photo
  *                             is reversed, which renders the label backwards)
+ * @param {boolean} photo      set when `image` is a real photograph rather than
+ *                             generated artwork; lightens the overlay so the
+ *                             picture reads through
  * @param {object}  bottle     { src, alt } floating product image, home only
  * @param {Array}   chips      [{ label, value }] small trust pills
  */
@@ -19,6 +22,7 @@ export default function HeroSection({
   image,
   imageAlt = '',
   flipImage = false,
+  photo = false,
   eyebrow,
   title,
   subtitle,
@@ -30,6 +34,7 @@ export default function HeroSection({
   const classes = [
     'vint-hero',
     `vint-hero--${variant}`,
+    photo && 'vint-hero--photo',
     centered && 'vint-hero--centered',
   ]
     .filter(Boolean)
