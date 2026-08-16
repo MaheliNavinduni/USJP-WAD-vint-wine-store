@@ -234,61 +234,6 @@ const PAIRINGS = {
 };
 
 /* ------------------------------------------------------------------ */
-/* Our Story gallery                                                    */
-/* ------------------------------------------------------------------ */
-
-function storySvg({ id, width, height, label, art, tint }) {
-  return `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="${label}">
-  <defs>
-    <linearGradient id="${id}-bg" x1="0" y1="0" x2="0.8" y2="1">
-      <stop offset="0%" stop-color="${tint[0]}" />
-      <stop offset="100%" stop-color="${tint[1]}" />
-    </linearGradient>
-    <radialGradient id="${id}-glow" cx="42%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="${PALETTE.gold}" stop-opacity="0.42" />
-      <stop offset="100%" stop-color="${PALETTE.gold}" stop-opacity="0" />
-    </radialGradient>
-  </defs>
-
-  <rect width="${width}" height="${height}" fill="url(#${id}-bg)" />
-  <rect width="${width}" height="${height}" fill="url(#${id}-glow)" />
-
-  <g transform="translate(${width / 2} ${height / 2})" fill="none" stroke="${PALETTE.ivory}"
-     stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
-    ${art}
-  </g>
-</svg>`;
-}
-
-const STORY = [
-  {
-    id: 'story-1',
-    width: 600,
-    height: 800,
-    label: 'Two glasses of wine on a table',
-    tint: [PALETTE.burgundyMid, PALETTE.black],
-    art: `${GLASS(-70, -110, 1.1)}${GLASS(70, -90, 1.25)}`,
-  },
-  {
-    id: 'story-2',
-    width: 900,
-    height: 520,
-    label: 'A toast between friends',
-    tint: [PALETTE.burgundyBright, PALETTE.burgundy],
-    art: `<g transform="rotate(-16)">${GLASS(-90, -130, 1.05)}</g><g transform="rotate(16)">${GLASS(90, -130, 1.05)}</g>`,
-  },
-  {
-    id: 'story-3',
-    width: 900,
-    height: 520,
-    label: 'Wine being poured from a bottle',
-    tint: [PALETTE.black, PALETTE.burgundyMid],
-    art: `<g transform="rotate(-28) translate(-120 -60)">${BOTTLE(0, -110, 1)}</g>${GLASS(120, -60, 1.15)}<path d="M-40 -70 60 -40" stroke-dasharray="6 10" />`,
-  },
-];
-
-/* ------------------------------------------------------------------ */
 
 console.log('Generating VINT placeholder artwork…');
 
@@ -298,10 +243,6 @@ Object.entries(HEROES).forEach(([name, config]) => {
 
 Object.entries(PAIRINGS).forEach(([key, label]) => {
   write(`public/images/pairings/${key}.svg`, pairingSvg(key, label));
-});
-
-STORY.forEach((entry) => {
-  write(`public/images/story/${entry.id}.svg`, storySvg(entry));
 });
 
 console.log('Done. Replace any of these with real photography at the same path.');

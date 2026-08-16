@@ -816,15 +816,18 @@
 
 /* ---------- Editorial gallery ---------- */
 
+/* Three equal portrait tiles. All three supplied photographs are 2:3, so the
+   old asymmetric editorial grid would have cropped two of them into letterbox
+   strips. Equal tiles keep each shot whole and the same size. */
 .vint-gallery {
   display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-md);
 }
 
 .vint-gallery__item {
   position: relative;
+  aspect-ratio: 2 / 3;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--vint-cream-deep);
@@ -844,18 +847,14 @@
   filter: saturate(1.1);
 }
 
-.vint-gallery__item--tall {
-  grid-row: span 2;
-  min-height: 420px;
-}
-
-.vint-gallery__item--wide {
-  min-height: 260px;
+@media (max-width: 640px) {
+  .vint-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 820px) {
-  .vint-legacy,
-  .vint-gallery {
+  .vint-legacy {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -866,10 +865,6 @@
     min-height: 0;
   }
 
-  .vint-gallery__item--tall {
-    grid-row: auto;
-    min-height: 320px;
-  }
 }
 
 /* --------------------------------------------------------------------------

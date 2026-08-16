@@ -16,25 +16,16 @@ export const metadata = {
 
 const GALLERY = [
   {
-    src: '/images/story/story-1.svg',
-    alt: 'Two glasses of VINT wine poured on a table',
-    modifier: 'tall',
-    width: 600,
-    height: 800,
+    src: '/images/story/shared-1.jpg',
+    alt: 'Two glasses of red wine beside a bowl of redcurrants and a bottle',
   },
   {
-    src: '/images/story/story-2.svg',
-    alt: 'Friends raising their glasses in a toast',
-    modifier: 'wide',
-    width: 900,
-    height: 520,
+    src: '/images/story/shared-2.jpg',
+    alt: 'Red wine being poured into a glass',
   },
   {
-    src: '/images/story/story-3.svg',
-    alt: 'Wine being poured from a VINT bottle into a glass',
-    modifier: 'wide',
-    width: 900,
-    height: 520,
+    src: '/images/story/shared-3.jpg',
+    alt: 'Wine poured into a glass under warm string lights in the evening',
   },
 ];
 
@@ -137,17 +128,13 @@ export default function OurStoryPage() {
 
           <div className="vint-gallery">
             {GALLERY.map((item, index) => (
-              <Reveal
-                key={item.src}
-                className={`vint-gallery__item vint-gallery__item--${item.modifier}`}
-                delay={index * 100}
-              >
+              <Reveal key={item.src} className="vint-gallery__item" delay={index * 100}>
                 <Image
                   src={item.src}
                   alt={item.alt}
-                  width={item.width}
-                  height={item.height}
-                  sizes="(max-width: 820px) 100vw, 50vw"
+                  width={800}
+                  height={1200}
+                  sizes="(max-width: 640px) 100vw, 33vw"
                 />
               </Reveal>
             ))}
