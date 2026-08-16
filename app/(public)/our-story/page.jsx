@@ -46,7 +46,9 @@ export default function OurStoryPage() {
     <>
       <HeroSection
         variant="page"
-        image="/images/heroes/story-hero.svg"
+        image="/images/heroes/story-hero.jpg"
+        imageAlt="Red wine being poured into a glass against a dark background"
+        photo
         eyebrow={`Established ${SITE.established}`}
         title="Our Story"
         subtitle="From a treasured homemade recipe to every bottle we share."
