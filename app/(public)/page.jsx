@@ -45,10 +45,6 @@ export default function HomePage() {
           { value: 'Small', label: 'batch, always' },
           { value: 'Island', label: 'grown ingredients' },
         ]}
-        bottle={{
-          src: '/images/wines/island-king.png',
-          alt: 'A bottle of VINT Island King king coconut wine',
-        }}
         scrollTo="finest-selection"
       />
 
