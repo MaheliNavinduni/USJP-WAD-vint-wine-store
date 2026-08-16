@@ -92,11 +92,12 @@
 }
 
 /* Full-bleed photographic panel rather than a floating product shot.
-   Its height comes from the grid row so it matches the copy beside it exactly;
-   min-height keeps it from collapsing into a letterbox if the copy is short. */
+   The copy alone sets the row height: the image is taken out of flow so its
+   own 4:5 ratio cannot stretch the row past the text and leave dead space
+   under the button. It then fills whatever height the copy came to. */
 .vint-about__media {
   position: relative;
-  min-height: 420px;
+  min-height: 380px;
   background: var(--vint-cream-deep);
   border: 1px solid var(--vint-border-soft);
   border-radius: var(--radius-lg);
@@ -105,6 +106,8 @@
 }
 
 .vint-about__media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
