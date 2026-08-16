@@ -80,7 +80,9 @@
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: center;
+  /* Stretch, not centre: the image is taller than the copy, and centring it
+     left neither the top nor the bottom edge lined up with the text. */
+  align-items: stretch;
 }
 
 .vint-about__copy p {
@@ -89,11 +91,12 @@
   margin-bottom: var(--space-sm);
 }
 
-/* Full-bleed photographic panel rather than a floating product shot. Portrait
-   4:5 to match the source photograph, so it needs almost no cropping. */
+/* Full-bleed photographic panel rather than a floating product shot.
+   Its height comes from the grid row so it matches the copy beside it exactly;
+   min-height keeps it from collapsing into a letterbox if the copy is short. */
 .vint-about__media {
   position: relative;
-  aspect-ratio: 4 / 5;
+  min-height: 420px;
   background: var(--vint-cream-deep);
   border: 1px solid var(--vint-border-soft);
   border-radius: var(--radius-lg);
@@ -115,6 +118,13 @@
 @media (max-width: 820px) {
   .vint-about {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Stacked, there is no text column to match, so the photograph goes back to
+     its natural portrait ratio instead of being cropped to a wide band. */
+  .vint-about__media {
+    aspect-ratio: 4 / 5;
+    min-height: 0;
   }
 }
 
