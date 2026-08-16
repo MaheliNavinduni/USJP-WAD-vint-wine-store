@@ -89,36 +89,27 @@
   margin-bottom: var(--space-sm);
 }
 
+/* Full-bleed illustrated panel rather than a floating product shot — the
+   artwork carries its own lighting, so no glow or drop-shadow is layered on. */
 .vint-about__media {
   position: relative;
-  display: grid;
-  place-items: center;
-  padding: var(--space-xl);
+  aspect-ratio: 5 / 4;
   background: var(--vint-cream-deep);
+  border: 1px solid var(--vint-border-soft);
   border-radius: var(--radius-lg);
   overflow: hidden;
-}
-
-.vint-about__media::before {
-  content: '';
-  position: absolute;
-  width: 70%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(176, 141, 52, 0.24), transparent 70%);
+  box-shadow: var(--shadow-sm);
 }
 
 .vint-about__media img {
-  position: relative;
-  height: clamp(260px, 32vw, 380px);
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(52, 33, 28, 0.28));
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .vint-about__media:hover img {
-  transform: translateY(-8px) scale(1.03);
+  transform: scale(1.03);
 }
 
 @media (max-width: 820px) {

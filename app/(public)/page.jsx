@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button';
 import Reveal from '@/components/ui/Reveal';
 import Icon from '@/components/ui/Icon';
 import WineCard from '@/components/wine/WineCard';
-import { getFeaturedProducts, getProductBySlug } from '@/data/products';
+import { getFeaturedProducts } from '@/data/products';
 import { VALUE_PROPS } from '@/data/site';
 
 export const metadata = {
@@ -18,7 +18,6 @@ export const metadata = {
 
 export default function HomePage() {
   const featured = getFeaturedProducts(3);
-  const storyBottle = getProductBySlug('estate-grape');
 
   return (
     <>
@@ -128,11 +127,11 @@ export default function HomePage() {
 
             <Reveal className="vint-about__media" delay={120}>
               <Image
-                src={storyBottle.image}
-                alt={storyBottle.imageAlt}
-                width={300}
-                height={700}
-                sizes="(max-width: 820px) 70vw, 380px"
+                src="/images/about/cellar-still-life.svg"
+                alt="A fermenting demijohn, a VINT bottle and two glasses of wine on a cellar table"
+                width={800}
+                height={640}
+                sizes="(max-width: 820px) 100vw, 520px"
               />
             </Reveal>
           </div>
