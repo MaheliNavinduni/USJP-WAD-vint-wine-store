@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Boxes, ClipboardList, Clock, Package } from 'lucide-react';
 
 import AdminHeader from '@/components/admin/AdminHeader';
 import StatCard from '@/components/admin/StatCard';
 import StatusBadge from '@/components/ui/StatusBadge';
+import AdminThumb from '@/components/admin/AdminThumb';
 import Button from '@/components/ui/Button';
 import { formatPrice, products } from '@/data/products';
 import { getOrderStats, orders } from '@/data/orders';
@@ -133,10 +133,8 @@ export default function AdminDashboardPage() {
               {products.map((product) => (
                 <tr key={product.id}>
                   <td>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2xs)' }}>
-                      <span className="vint-table__thumb">
-                        <Image src={product.image} alt="" width={46} height={58} />
-                      </span>
+                    <div className="vint-admin-product-cell">
+                      <AdminThumb src={product.image} />
                       <span className="vint-table__strong">{product.name}</span>
                     </div>
                   </td>

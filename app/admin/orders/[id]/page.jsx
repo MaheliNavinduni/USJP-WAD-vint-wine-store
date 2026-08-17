@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 
 import AdminHeader from '@/components/admin/AdminHeader';
 import OrderStatusControl from '@/components/admin/OrderStatusControl';
+import AdminThumb from '@/components/admin/AdminThumb';
 import { getOrderById, orders } from '@/data/orders';
 import { formatPrice, getProductBySlug } from '@/data/products';
 
@@ -75,16 +75,10 @@ export default async function AdminOrderDetailPage({ params }) {
               <h2 className="vint-panel__title">Order</h2>
             </div>
             <div className="vint-panel__body">
-              <div style={{ display: 'flex', gap: 'var(--space-md)', alignItems: 'center', marginBottom: 'var(--space-md)' }}>
-                {product && (
-                  <span className="vint-table__thumb" style={{ width: 64, height: 80 }}>
-                    <Image src={product.image} alt="" width={64} height={80} />
-                  </span>
-                )}
+              <div className="vint-admin-item">
+                {product && <AdminThumb src={product.image} size="lg" />}
                 <div>
-                  <p style={{ fontFamily: 'var(--font-serif)', fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--vint-burgundy)' }}>
-                    {order.productName}
-                  </p>
+                  <p className="vint-admin-item__name">{order.productName}</p>
                   <span className="vint-table__muted">{order.productType}</span>
                 </div>
               </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { ImagePlus, Save } from 'lucide-react';
 
@@ -9,6 +8,7 @@ import FormInput from '@/components/form/FormInput';
 import SelectInput from '@/components/form/SelectInput';
 import TextArea from '@/components/form/TextArea';
 import Button from '@/components/ui/Button';
+import AdminThumb from '@/components/admin/AdminThumb';
 import Toast from '@/components/ui/Toast';
 import { WINE_CATEGORIES } from '@/data/products';
 
@@ -146,13 +146,13 @@ export default function ProductForm({ product }) {
           </p>
 
           <div className="vint-upload">
-            <span className="vint-upload__preview">
-              {values.image ? (
-                <Image src={values.image} alt="" width={84} height={104} />
-              ) : (
-                <ImagePlus size={26} aria-hidden="true" color="var(--vint-text-faint)" />
-              )}
-            </span>
+            {values.image ? (
+              <AdminThumb src={values.image} size="lg" />
+            ) : (
+              <span className="vint-thumb vint-thumb--lg vint-thumb--empty">
+                <ImagePlus size={24} aria-hidden="true" />
+              </span>
+            )}
 
             <div style={{ flex: 1 }}>
               <FormInput

@@ -303,20 +303,75 @@
   white-space: nowrap;
 }
 
-.vint-table__thumb {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 58px;
-  padding: 4px;
+/* One thumbnail treatment for every product image in the admin area: tables,
+   the order detail screen and the product form all use the same 3:4 box at one
+   of two sizes. The image is absolutely positioned inside a clipped box so it
+   is always centred, always contained, and can never spill out while loading. */
+.vint-thumb {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
   background: var(--vint-cream-deep);
+  border: 1px solid var(--vint-border-soft);
   border-radius: var(--radius-xs);
+  overflow: hidden;
 }
 
-.vint-table__thumb img {
-  height: 100%;
-  width: auto;
+.vint-thumb--sm {
+  width: 48px;
+  height: 64px;
+}
+
+.vint-thumb--lg {
+  width: 72px;
+  height: 96px;
+}
+
+.vint-thumb img {
+  position: absolute;
+  inset: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
   object-fit: contain;
+}
+
+/* Placeholder shown on the product form before an image is chosen. */
+.vint-thumb--empty {
+  display: grid;
+  place-items: center;
+  border-style: dashed;
+  border-color: var(--vint-border);
+  color: var(--vint-text-faint);
+}
+
+/* Product name cell: thumbnail beside the name and its meta line. */
+.vint-admin-product-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
+.vint-admin-product-cell__meta {
+  display: block;
+}
+
+/* The product block at the top of the order detail panel. */
+.vint-admin-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--vint-border-soft);
+}
+
+.vint-admin-item__name {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--vint-burgundy);
+  line-height: var(--leading-snug);
 }
 
 .vint-table__actions {
@@ -395,22 +450,6 @@
 
 .vint-upload:hover {
   border-color: var(--vint-burgundy);
-}
-
-.vint-upload__preview {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 84px;
-  height: 104px;
-  background: var(--vint-ivory-soft);
-  border-radius: var(--radius-xs);
-}
-
-.vint-upload__preview img {
-  height: 100%;
-  width: auto;
-  object-fit: contain;
 }
 
 .vint-admin-actions {

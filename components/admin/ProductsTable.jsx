@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Pencil, Trash2 } from 'lucide-react';
 
 import StatusBadge from '@/components/ui/StatusBadge';
+import AdminThumb from '@/components/admin/AdminThumb';
 import Modal from '@/components/ui/Modal';
 import Toast from '@/components/ui/Toast';
 import Button from '@/components/ui/Button';
@@ -53,13 +53,11 @@ export default function ProductsTable() {
               {rows.map((product) => (
                 <tr key={product.id}>
                   <td>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2xs)' }}>
-                      <span className="vint-table__thumb">
-                        <Image src={product.image} alt="" width={46} height={58} />
-                      </span>
+                    <div className="vint-admin-product-cell">
+                      <AdminThumb src={product.image} />
                       <div>
                         <span className="vint-table__strong">{product.name}</span>
-                        <span className="vint-table__muted" style={{ display: 'block' }}>
+                        <span className="vint-admin-product-cell__meta vint-table__muted">
                           {product.volume} · {product.alcohol}
                         </span>
                       </div>
