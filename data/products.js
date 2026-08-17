@@ -61,8 +61,6 @@ export const products = [
     tagline: 'Rich strawberry notes with a smooth, refreshing finish.',
     description:
       'Rich strawberry notes with a smooth and refreshing finish. An elegant expression of our finest fruit, pressed at the peak of the season.',
-    longDescription:
-      'Our Heritage Red is built from strawberries picked at full ripeness and fermented slowly in small batches. The result is a wine that keeps the brightness of fresh fruit while gaining the depth and roundness of a proper table red — generous on the nose, soft through the middle, and clean on the finish.',
     flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
     serving: { label: 'Slightly Chilled', tempF: '60-65°F', tempC: '15-18°C' },
     ingredients:
@@ -94,8 +92,6 @@ export const products = [
     tagline: 'Bright and aromatic, with zesty citrus and white floral notes.',
     description:
       'Bright and aromatic with zesty citrus and delicate white floral aromas. A crisp, mineral-driven palate that refreshes the soul.',
-    longDescription:
-      'Classic Blanc is our lightest expression — pressed gently, fermented cool, and bottled early to hold on to its aromatics. Expect lime zest and orange blossom on the nose, a taut and clean palate, and a dry finish that makes it an easy partner for food.',
     flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
     serving: { label: 'Slightly Chilled', tempF: '60-65°F', tempC: '15-18°C' },
     ingredients:
@@ -127,8 +123,6 @@ export const products = [
     tagline: 'Deep crimson, with dark cherry, cedar and a velvety finish.',
     description:
       'Deep crimson with profound layers of dark cherry, cedar, and subtle spice. A robust and velvety finish that rewards a slow evening.',
-    longDescription:
-      'Rich, bold, and full of character, Estate Grape offers a smooth blend of fruity flavours with a warm, satisfying finish. It is the most structured wine we make — fermented on the skins for colour and grip, then rested until the tannins soften. Perfect for relaxing evenings, special occasions, or pairing with your favourite meals.',
     flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
     serving: { label: 'Slightly Chilled', tempF: '60-65°F', tempC: '15-18°C' },
     ingredients:
@@ -160,8 +154,6 @@ export const products = [
     tagline: 'A tropical expression — crisp, lightly sweet, unmistakably Sri Lankan.',
     description:
       'A unique tropical expression. Crisp and lightly sweet with vibrant notes of fresh king coconut and a clean, cooling finish.',
-    longDescription:
-      'Island King is the wine we are proudest of. Made from Sri Lankan king coconut water, it is inspired by the tropical heritage of the island and offers a naturally refreshing, fruity character you will not find anywhere else. Delicate, golden, and best shared on a warm evening.',
     flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
     serving: { label: 'Slightly Chilled', tempF: '60-65°F', tempC: '15-18°C' },
     ingredients:

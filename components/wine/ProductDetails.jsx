@@ -140,10 +140,6 @@ export default function ProductDetails({ product }) {
               </div>
             </div>
           </Accordion>
-
-          <Accordion title="The Making of This Wine">
-            <p>{product.longDescription}</p>
-          </Accordion>
         </div>
       </section>
 
