@@ -31,7 +31,7 @@ export const glassware = [
   {
     id: 'g-003',
     slug: 'coupe-glass',
-    name: 'Coupe Glass',
+    name: 'Coupe Wine Glass',
     category: 'Wine Glass',
     price: 650,
     image: '/images/glasses/coupe-glass.jpg',
