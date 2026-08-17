@@ -20,6 +20,19 @@ export const SITE = {
     full: 'D/47, 500 Housing Scheme Road, Kiriwandala, Puwakpitiya, Avissawella',
     locality: 'Puwakpitiya, Avissawella',
     country: 'Sri Lanka',
+    /**
+     * Exact position for the Contact page map, as "latitude,longitude".
+     *
+     * Google cannot geocode a house number inside a housing scheme here, so
+     * searching for the written address returns the general area with no
+     * marker. Coordinates place the pin exactly.
+     *
+     * To set it: open Google Maps, find the estate, right-click the exact
+     * spot, and click the latitude/longitude at the top of the menu to copy
+     * it. Paste it here, e.g. '6.9518,80.2103'. Until then the map falls back
+     * to searching for the locality, which does resolve.
+     */
+    coordinates: null,
   },
 };
 

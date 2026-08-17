@@ -12,9 +12,18 @@ export const metadata = {
     'Get in touch with VINT — questions about our homemade wines, orders, or a special occasion. Based in Puwakpitiya, Avissawella, Sri Lanka.',
 };
 
-/** Google Maps embed for the real estate address. No API key required. */
-const MAP_QUERY = `${SITE.address.full}, ${SITE.address.country}`;
-const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=15&output=embed`;
+/**
+ * Google Maps embed for the estate. No API key required.
+ *
+ * Prefer coordinates: Google cannot geocode the house number here, so
+ * searching the written address returns the surrounding area with no marker.
+ * With coordinates it drops a pin on the exact spot and zooms in close.
+ * Falling back to the locality at least resolves to the right neighbourhood.
+ */
+const { coordinates, locality, country } = SITE.address;
+const MAP_QUERY = coordinates ?? `${locality}, ${country}`;
+const MAP_ZOOM = coordinates ? 17 : 14;
+const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=${MAP_ZOOM}&output=embed`;
 
 export default function ContactPage() {
   return (
@@ -102,7 +111,7 @@ export default function ContactPage() {
           <Reveal className="vint-map">
             <iframe
               src={MAP_SRC}
-              title={`Map showing the VINT estate at ${MAP_QUERY}`}
+              title={`Map showing the VINT estate at ${SITE.address.full}`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
