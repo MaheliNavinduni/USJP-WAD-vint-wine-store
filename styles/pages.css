@@ -910,11 +910,79 @@
 }
 
 .vint-map {
+  position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--vint-border-soft);
   box-shadow: var(--shadow-sm);
   line-height: 0;
+}
+
+/* Google's free embed labels a coordinate pin with the raw latitude and
+   longitude and gives no way to override it, so the address is presented in
+   this card over the map instead. */
+.vint-map__card {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 1;
+  max-width: min(320px, calc(100% - 2 * var(--space-md)));
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(251, 248, 238, 0.96);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--vint-border-soft);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  line-height: var(--leading-snug);
+}
+
+.vint-map__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--vint-burgundy);
+}
+
+.vint-map__address {
+  margin-top: var(--space-3xs);
+  font-size: var(--text-sm);
+  font-style: normal;
+  color: var(--vint-text);
+}
+
+.vint-map__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  margin-top: var(--space-2xs);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--vint-burgundy);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.vint-map__link:hover {
+  border-bottom-color: var(--vint-burgundy);
+}
+
+/* Full width above the map on a phone — a floating card would cover most of
+   the map at that size. */
+@media (max-width: 560px) {
+  .vint-map__card {
+    position: static;
+    max-width: none;
+    border: none;
+    border-bottom: 1px solid var(--vint-border-soft);
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--vint-ivory-soft);
+  }
 }
 
 .vint-map iframe {

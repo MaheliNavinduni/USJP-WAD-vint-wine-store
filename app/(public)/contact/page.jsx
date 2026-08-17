@@ -1,4 +1,4 @@
-import { Mail, MapPin, Clock } from 'lucide-react';
+import { Mail, MapPin, Clock, ExternalLink } from 'lucide-react';
 
 import HeroSection from '@/components/sections/HeroSection';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -24,6 +24,11 @@ const { coordinates, locality, country } = SITE.address;
 const MAP_QUERY = coordinates ?? `${locality}, ${country}`;
 const MAP_ZOOM = coordinates ? 17 : 14;
 const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=${MAP_ZOOM}&output=embed`;
+
+/** Opens the full Google Maps app or site at the estate, for directions. */
+const DIRECTIONS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  coordinates ?? `${locality}, ${country}`,
+)}`;
 
 export default function ContactPage() {
   return (
@@ -109,6 +114,30 @@ export default function ContactPage() {
           />
 
           <Reveal className="vint-map">
+            {/* The free Google embed labels a coordinate pin with the raw
+                latitude and longitude and offers no way to override it, so the
+                address is shown on the map here instead. */}
+            <div className="vint-map__card">
+              <span className="vint-map__label">
+                <MapPin size={13} aria-hidden="true" />
+                VINT Estate
+              </span>
+              <address className="vint-map__address">
+                {SITE.address.line1}
+                <br />
+                {SITE.address.line2}
+              </address>
+              <a
+                className="vint-map__link"
+                href={DIRECTIONS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get directions
+                <ExternalLink size={13} aria-hidden="true" />
+              </a>
+            </div>
+
             <iframe
               src={MAP_SRC}
               title={`Map showing the VINT estate at ${SITE.address.full}`}
