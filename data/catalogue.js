@@ -21,7 +21,7 @@ export const orderableItems = [
   ...glassware.map((item) => ({
     slug: item.slug,
     name: item.name,
-    category: item.setSize,
+    category: item.category,
     price: item.price,
     image: item.image,
     imageAlt: item.imageAlt,

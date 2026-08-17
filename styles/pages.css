@@ -444,10 +444,11 @@
    Wine glasses
    -------------------------------------------------------------------------- */
 
+/* Five glasses across at desktop width, wrapping down on smaller screens. */
 .vint-glass-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: var(--space-md);
 }
 
 .vint-glass-card {
@@ -467,40 +468,27 @@
   box-shadow: var(--shadow-lg);
 }
 
+/* The product shots are very tall (roughly 0.38:1) on a near-white ground, so
+   the glass is contained rather than cropped and the well is matched to the
+   photographs' own background so the two blend seamlessly. */
 .vint-glass-card__media {
-  position: relative;
-  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  min-height: 280px;
+  padding: var(--space-md) var(--space-sm);
+  background: #fefefe;
   overflow: hidden;
-  background: var(--vint-cream-deep);
 }
 
 .vint-glass-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 240px;
+  width: auto;
+  object-fit: contain;
   transition: transform var(--dur-slow) var(--ease-out);
 }
 
 .vint-glass-card:hover .vint-glass-card__media img {
   transform: scale(1.05);
-}
-
-.vint-glass-card__badge {
-  position: absolute;
-  top: var(--space-xs);
-  left: var(--space-xs);
-  padding: 0.3rem 0.7rem;
-  font-size: var(--text-xs);
-  font-weight: 700;
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--vint-burgundy);
-  background: rgba(251, 248, 238, 0.96);
-  border-radius: var(--radius-pill);
-  /* The glassware photos are almost white — without an outline the pill
-     disappears into the image. */
-  border: 1px solid var(--vint-border);
-  box-shadow: var(--shadow-xs);
 }
 
 .vint-glass-card__body {
@@ -511,8 +499,12 @@
   flex: 1;
 }
 
+.vint-glass-card__body h3 {
+  font-size: var(--text-lg);
+}
+
 .vint-glass-card__desc {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--vint-text-muted);
   flex: 1;
 }
@@ -521,7 +513,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-sm);
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
   padding-top: var(--space-sm);
   margin-top: var(--space-2xs);
   border-top: 1px solid var(--vint-border-soft);

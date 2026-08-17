@@ -1,46 +1,65 @@
 /**
  * VINT — glassware collection.
  *
- * NOTE ON PRICING
- * The Figma screens showed these in USD ($145 / $210 / $380) while every wine
- * was priced in Rupees. To keep one currency across the site the same relative
- * pricing has been carried over in Rs. Adjust the `price` values here if the
- * business uses different figures — nothing else needs to change.
+ * Five individual glasses, sold singly rather than as sets. Prices are per
+ * glass, in Rupees, matching the wine pricing.
  */
 
 export const glassware = [
   {
     id: 'g-001',
-    slug: 'sommelier-series',
-    name: 'The Sommelier Series',
-    setSize: 'Set of 2',
-    price: 14500,
-    image: '/images/glasses/sommelier-series.png',
-    imageAlt: 'Two tall stemmed VINT sommelier wine glasses on a marble surface',
+    slug: 'ribbed-wine-glass',
+    name: 'Ribbed Wine Glass',
+    category: 'Wine Glass',
+    price: 650,
+    image: '/images/glasses/ribbed-wine-glass.jpg',
+    imageAlt: 'A ribbed VINT wine glass with vertical fluting along the bowl',
     description:
-      'A generous bowl crafted specifically to allow complex reds to breathe, enhancing the aromatic profile of bold vintages.',
+      'Elegant glass with vertical ridges, designed to add a stylish and textured look.',
   },
   {
     id: 'g-002',
-    slug: 'heritage-crystal-set',
-    name: 'The Heritage Crystal Set',
-    setSize: 'Set of 4',
-    price: 21000,
-    image: '/images/glasses/heritage-crystal-set.png',
-    imageAlt: 'Four slender VINT crystal wine glasses on a linen tablecloth',
+    slug: 'burgundy-wine-glass',
+    name: 'Burgundy Wine Glass',
+    category: 'Wine Glass',
+    price: 600,
+    image: '/images/glasses/burgundy-wine-glass.jpg',
+    imageAlt: 'A VINT burgundy wine glass with a large rounded bowl',
     description:
-      'Slender silhouettes designed to maintain crisp temperatures and direct delicate white varietals to the ideal tasting zone.',
+      'Large, rounded bowl that gives red wine plenty of space to breathe and helps enhance its aroma.',
   },
   {
     id: 'g-003',
-    slug: 'varietal-tasting-set',
-    name: 'Varietal Specific Tasting Set',
-    setSize: 'Set of 6',
-    price: 38000,
-    image: '/images/glasses/varietal-tasting-set.png',
-    imageAlt: 'A grid of six varietal-specific VINT tasting glasses',
+    slug: 'coupe-glass',
+    name: 'Coupe Glass',
+    category: 'Wine Glass',
+    price: 650,
+    image: '/images/glasses/coupe-glass.jpg',
+    imageAlt: 'A VINT coupe glass with a wide, shallow fluted bowl',
     description:
-      "The ultimate connoisseur's toolkit. Six distinct geometries meticulously calibrated to highlight the unique characteristics of world-class varietals.",
+      'Wide, shallow bowl with a short profile, traditionally used for champagne and sparkling wines.',
+  },
+  {
+    id: 'g-004',
+    slug: 'white-wine-glass',
+    name: 'White Wine Glass',
+    category: 'Wine Glass',
+    price: 600,
+    image: '/images/glasses/white-wine-glass.jpg',
+    imageAlt: 'A tall VINT white wine glass with a narrow bowl',
+    description:
+      "Tall, narrow bowl designed to preserve the wine's aroma and keep white wine cool.",
+  },
+  {
+    id: 'g-005',
+    slug: 'stemless-wine-glass',
+    name: 'Stemless Wine Glass',
+    category: 'Wine Glass',
+    price: 500,
+    image: '/images/glasses/stemless-wine-glass.jpg',
+    imageAlt: 'A rounded stemless VINT wine glass',
+    description:
+      'Modern, rounded glass without a stem, offering a casual and comfortable way to enjoy wine.',
   },
 ];
 

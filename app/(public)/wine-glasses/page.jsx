@@ -36,9 +36,9 @@ export default function WineGlassesPage() {
       <section className="vint-section" id="glass-grid">
         <div className="vint-container">
           <SectionHeading
-            eyebrow="Three Sets"
+            eyebrow="Five Glasses"
             title="Sip in Style"
-            subtitle="Every glass, a different experience. Each set is available to order directly through our team."
+            subtitle="Every glass, a different experience. Each one is available to order directly through our team."
             align="center"
           />
 
@@ -47,13 +47,12 @@ export default function WineGlassesPage() {
               <Reveal key={item.id} delay={index * 90}>
                 <article className="vint-glass-card">
                   <div className="vint-glass-card__media">
-                    <span className="vint-glass-card__badge">{item.setSize}</span>
                     <Image
                       src={item.image}
                       alt={item.imageAlt}
-                      width={520}
-                      height={390}
-                      sizes="(max-width: 900px) 100vw, 380px"
+                      width={300}
+                      height={800}
+                      sizes="(max-width: 900px) 45vw, 220px"
                     />
                   </div>
 
