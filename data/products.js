@@ -27,19 +27,17 @@ export const WINE_CATEGORIES = [
   { label: 'King Coconut Wine', slug: 'king-coconut-wine' },
 ];
 
-/** Shared pairing tiles. Swap the `image` paths for real photography later. */
-const PAIRING = {
-  steak: { name: 'Perfectly Cooked Steak', image: '/images/pairings/steak.svg' },
-  roastChicken: { name: 'Roast Chicken', image: '/images/pairings/roast-chicken.svg' },
-  darkChocolate: { name: 'Dark Chocolate', image: '/images/pairings/dark-chocolate.svg' },
-  agedGouda: { name: 'Aged Gouda', image: '/images/pairings/aged-gouda.svg' },
-  freshBerries: { name: 'Fresh Berries', image: '/images/pairings/fresh-berries.svg' },
-  seafood: { name: 'Grilled Seafood', image: '/images/pairings/seafood.svg' },
-  softCheese: { name: 'Soft Cheeses', image: '/images/pairings/soft-cheese.svg' },
-  tropicalFruit: { name: 'Tropical Fruit', image: '/images/pairings/tropical-fruit.svg' },
-  spicedCurry: { name: 'Spiced Curry', image: '/images/pairings/spiced-curry.svg' },
-  darkBerryTart: { name: 'Berry Tart', image: '/images/pairings/berry-tart.svg' },
-};
+/**
+ * The four pairings shown on every wine page. The estate serves the same
+ * accompaniments across the range, so this is one shared list rather than a
+ * per-wine selection.
+ */
+const PAIRINGS = [
+  { name: 'Perfectly Cooked Steak', image: '/images/pairings/steak.jpg' },
+  { name: 'Roast Chicken', image: '/images/pairings/roast-chicken.jpg' },
+  { name: 'Dark Chocolate', image: '/images/pairings/dark-chocolate.jpg' },
+  { name: 'Aged Gouda', image: '/images/pairings/aged-gouda.jpg' },
+];
 
 export const products = [
   {
@@ -71,7 +69,7 @@ export const products = [
       temperature:
         'Serve at 60-65°F (15-18°C). Give it a short rest after opening to let the fruit come forward.',
     },
-    pairings: [PAIRING.darkChocolate, PAIRING.freshBerries, PAIRING.softCheese, PAIRING.darkBerryTart],
+    pairings: PAIRINGS,
   },
   {
     id: 'w-002',
@@ -102,7 +100,7 @@ export const products = [
       temperature:
         'Serve at 60-65°F (15-18°C). No decanting needed — this wine is at its best shortly after it is poured.',
     },
-    pairings: [PAIRING.seafood, PAIRING.roastChicken, PAIRING.softCheese, PAIRING.tropicalFruit],
+    pairings: PAIRINGS,
   },
   {
     id: 'w-003',
@@ -133,7 +131,7 @@ export const products = [
       temperature:
         'Serve at 60-65°F (15-18°C). Decant for at least 30 minutes before serving to allow the complex aromas to open fully.',
     },
-    pairings: [PAIRING.steak, PAIRING.roastChicken, PAIRING.darkChocolate, PAIRING.agedGouda],
+    pairings: PAIRINGS,
   },
   {
     id: 'w-004',
@@ -164,7 +162,7 @@ export const products = [
       temperature:
         'Serve at 60-65°F (15-18°C). Best enjoyed within a day of opening while the aromatics are at their brightest.',
     },
-    pairings: [PAIRING.spicedCurry, PAIRING.seafood, PAIRING.tropicalFruit, PAIRING.freshBerries],
+    pairings: PAIRINGS,
   },
 ];
 

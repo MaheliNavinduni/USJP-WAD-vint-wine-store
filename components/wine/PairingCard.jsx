@@ -8,9 +8,9 @@ export default function PairingCard({ pairing }) {
         <Image
           src={pairing.image}
           alt=""
-          width={400}
-          height={300}
-          sizes="(max-width: 640px) 45vw, 260px"
+          width={265}
+          height={342}
+          sizes="(max-width: 640px) 45vw, 265px"
         />
       </div>
       <figcaption className="vint-pairing__name">{pairing.name}</figcaption>
