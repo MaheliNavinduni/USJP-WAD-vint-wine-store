@@ -21,18 +21,17 @@ export const SITE = {
     locality: 'Puwakpitiya, Avissawella',
     country: 'Sri Lanka',
     /**
-     * Exact position for the Contact page map, as "latitude,longitude".
+     * Exact position of the estate, as "latitude,longitude".
      *
      * Google cannot geocode a house number inside a housing scheme here, so
      * searching for the written address returns the general area with no
-     * marker. Coordinates place the pin exactly.
+     * marker. Coordinates drop the pin on the spot.
      *
-     * To set it: open Google Maps, find the estate, right-click the exact
-     * spot, and click the latitude/longitude at the top of the menu to copy
-     * it. Paste it here, e.g. '6.9518,80.2103'. Until then the map falls back
-     * to searching for the locality, which does resolve.
+     * Supplied as 6°56'25.1"N 80°11'23.8"E and converted to decimal degrees.
+     * To change it: open Google Maps, right-click the exact spot, and click
+     * the latitude/longitude at the top of the menu to copy it.
      */
-    coordinates: null,
+    coordinates: '6.940306,80.189944',
   },
 };
 
