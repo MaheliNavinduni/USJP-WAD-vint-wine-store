@@ -120,25 +120,6 @@ export default function ProductDetails({ product }) {
               Ingredients
             </p>
             <p>{product.ingredients}</p>
-
-            <div className="vint-spec-list">
-              <div className="vint-spec">
-                <span className="vint-spec__label">Origin</span>
-                <span className="vint-spec__value">{product.origin}</span>
-              </div>
-              <div className="vint-spec">
-                <span className="vint-spec__label">Vintage</span>
-                <span className="vint-spec__value">{product.vintage}</span>
-              </div>
-              <div className="vint-spec">
-                <span className="vint-spec__label">Alcohol</span>
-                <span className="vint-spec__value">{product.alcohol}</span>
-              </div>
-              <div className="vint-spec">
-                <span className="vint-spec__label">Volume</span>
-                <span className="vint-spec__value">{product.volume}</span>
-              </div>
-            </div>
           </Accordion>
 
           <Accordion title="Serving Suggestions" defaultOpen>

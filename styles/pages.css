@@ -415,33 +415,6 @@
   margin-bottom: var(--space-2xs);
 }
 
-.vint-spec-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
-  gap: var(--space-sm);
-  margin-top: var(--space-md);
-}
-
-.vint-spec {
-  padding: var(--space-2xs) 0 var(--space-2xs) var(--space-2xs);
-  border-left: 2px solid var(--vint-border);
-}
-
-.vint-spec__label {
-  display: block;
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--vint-text-faint);
-}
-
-.vint-spec__value {
-  font-family: var(--font-serif);
-  font-size: var(--text-md);
-  font-weight: 600;
-  color: var(--vint-text);
-}
-
 /* ---------- Curated pairings ---------- */
 
 .vint-pairings-grid {
