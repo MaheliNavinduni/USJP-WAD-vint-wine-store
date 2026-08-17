@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { ChevronRight, ShoppingBag, Thermometer, UtensilsCrossed, Wine } from 'lucide-react';
 
 import Button from '@/components/ui/Button';
-import Rating from '@/components/ui/Rating';
 import Reveal from '@/components/ui/Reveal';
 import Accordion from '@/components/ui/Accordion';
 import QuantitySelector from '@/components/ui/QuantitySelector';
@@ -66,8 +65,6 @@ export default function ProductDetails({ product }) {
 
               <div className="vint-product__pricing">
                 <span className="vint-product__price">{formatPrice(product.price)}</span>
-                <span className="vint-product__divider" aria-hidden="true" />
-                <Rating value={product.rating} reviews={product.reviews} />
               </div>
 
               <p className="vint-product__desc">{product.description}</p>
