@@ -63,7 +63,7 @@ export const products = [
       'Rich strawberry notes with a smooth and refreshing finish. An elegant expression of our finest fruit, pressed at the peak of the season.',
     longDescription:
       'Our Heritage Red is built from strawberries picked at full ripeness and fermented slowly in small batches. The result is a wine that keeps the brightness of fresh fruit while gaining the depth and roundness of a proper table red — generous on the nose, soft through the middle, and clean on the finish.',
-    flavour: { sweetness: 55, acidity: 62, body: 70, fruitiness: 88 },
+    flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
     serving: { label: 'Lightly Chilled', tempF: '55-60°F', tempC: '12-16°C' },
     ingredients:
       'Made with fresh strawberries, sugar, water, and yeast. Strawberry wine is a fruit-based wine enjoyed around the world, inspired by traditional fruit-winemaking practices carried through generations of home cellars.',
@@ -96,7 +96,7 @@ export const products = [
       'Bright and aromatic with zesty citrus and delicate white floral aromas. A crisp, mineral-driven palate that refreshes the soul.',
     longDescription:
       'Classic Blanc is our lightest expression — pressed gently, fermented cool, and bottled early to hold on to its aromatics. Expect lime zest and orange blossom on the nose, a taut and clean palate, and a dry finish that makes it an easy partner for food.',
-    flavour: { sweetness: 35, acidity: 78, body: 45, fruitiness: 60 },
+    flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
     serving: { label: 'Well Chilled', tempF: '45-50°F', tempC: '7-10°C' },
     ingredients:
       'Made from white grapes, sugar, water, and yeast. White wine has a long history in European winemaking regions, especially France, Italy, and Germany, and remains the most food-friendly style in any cellar.',
@@ -129,7 +129,7 @@ export const products = [
       'Deep crimson with profound layers of dark cherry, cedar, and subtle spice. A robust and velvety finish that rewards a slow evening.',
     longDescription:
       'Rich, bold, and full of character, Estate Grape offers a smooth blend of fruity flavours with a warm, satisfying finish. It is the most structured wine we make — fermented on the skins for colour and grip, then rested until the tannins soften. Perfect for relaxing evenings, special occasions, or pairing with your favourite meals.',
-    flavour: { sweetness: 30, acidity: 55, body: 92, fruitiness: 65 },
+    flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
     serving: { label: 'Slightly Chilled', tempF: '60-65°F', tempC: '15-18°C' },
     ingredients:
       'Made from red grapes, sugar, water, and yeast. Red wine has its origins in ancient winemaking traditions, particularly in European regions such as France, Italy, and Spain, where skin contact gives the wine its colour and structure.',
@@ -162,7 +162,7 @@ export const products = [
       'A unique tropical expression. Crisp and lightly sweet with vibrant notes of fresh king coconut and a clean, cooling finish.',
     longDescription:
       'Island King is the wine we are proudest of. Made from Sri Lankan king coconut water, it is inspired by the tropical heritage of the island and offers a naturally refreshing, fruity character you will not find anywhere else. Delicate, golden, and best shared on a warm evening.',
-    flavour: { sweetness: 68, acidity: 40, body: 50, fruitiness: 82 },
+    flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
     serving: { label: 'Well Chilled', tempF: '45-50°F', tempC: '7-10°C' },
     ingredients:
       'Made from Sri Lankan king coconut water, sugar, and yeast. King coconut wine is inspired by the tropical heritage of Sri Lanka and offers a naturally refreshing and fruity character unique to the island.',
@@ -198,11 +198,25 @@ export function formatPrice(value) {
   return `${CURRENCY} ${Number(value).toLocaleString('en-LK')}`;
 }
 
-/** Turns a 0-100 flavour value into the word shown beside the bar. */
-export function flavourLabel(value) {
-  if (value >= 80) return 'High';
-  if (value >= 60) return 'Medium-High';
-  if (value >= 40) return 'Medium';
-  if (value >= 25) return 'Medium-Low';
-  return 'Low';
+/**
+ * Turns a 0-100 flavour value into the word shown beside the bar.
+ *
+ * Body uses the proper wine vocabulary (Light through Full) rather than the
+ * Low/High scale the other three attributes use — "Full body" is the term the
+ * designs use and the one a wine drinker expects.
+ */
+const INTENSITY_SCALE = ['Low', 'Medium-Low', 'Medium', 'Medium-High', 'High'];
+const BODY_SCALE = ['Light', 'Medium-Light', 'Medium', 'Medium-Full', 'Full'];
+
+function band(value) {
+  if (value >= 80) return 4;
+  if (value >= 62) return 3;
+  if (value >= 45) return 2;
+  if (value >= 28) return 1;
+  return 0;
+}
+
+export function flavourLabel(key, value) {
+  const scale = key === 'body' ? BODY_SCALE : INTENSITY_SCALE;
+  return scale[band(value)];
 }

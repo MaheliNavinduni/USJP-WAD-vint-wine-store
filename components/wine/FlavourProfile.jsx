@@ -37,11 +37,11 @@ export default function FlavourProfile({ flavour }) {
               aria-valuenow={value}
               aria-valuemin={0}
               aria-valuemax={100}
-              aria-label={`${label}: ${flavourLabel(value)}`}
+              aria-label={`${label}: ${flavourLabel(key, value)}`}
             >
               <span className="vint-flavour__fill" style={{ '--fill': `${value}%` }} />
             </div>
-            <span className="vint-flavour__value">{flavourLabel(value)}</span>
+            <span className="vint-flavour__value">{flavourLabel(key, value)}</span>
           </div>
         );
       })}
