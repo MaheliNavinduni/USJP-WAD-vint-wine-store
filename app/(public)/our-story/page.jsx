@@ -157,7 +157,7 @@ export default function OurStoryPage() {
                 fontSize: 'var(--text-lg)',
               }}
             >
-              Four wines, made in small batches at our estate in {SITE.address.line2}.
+              Four wines, made in small batches at our estate in {SITE.address.locality}.
             </p>
             <Button href="/collection" variant="primary" size="lg" icon={<ArrowRight size={17} />}>
               Explore the Collection

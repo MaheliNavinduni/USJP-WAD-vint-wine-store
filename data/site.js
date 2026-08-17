@@ -8,11 +8,18 @@ export const SITE = {
   tagline: 'Crafted with passion. A taste worth sharing.',
   established: '2020',
   email: 'vintwine@gmail.com',
+  /**
+   * The estate address. `line1` and `line2` exist only so address blocks can
+   * break across two lines; `full` is the single canonical string and is what
+   * the map looks up, so the two can never drift apart. `locality` is for
+   * running prose, where a full street address would read badly.
+   */
   address: {
     line1: 'D/47, 500 Housing Scheme Road, Kiriwandala',
     line2: 'Puwakpitiya, Avissawella',
-    /** Used by the Contact page map embed. */
-    query: 'Puwakpitiya, Avissawella, Sri Lanka',
+    full: 'D/47, 500 Housing Scheme Road, Kiriwandala, Puwakpitiya, Avissawella',
+    locality: 'Puwakpitiya, Avissawella',
+    country: 'Sri Lanka',
   },
 };
 

@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 /** Google Maps embed for the real estate address. No API key required. */
-const MAP_QUERY = `${SITE.address.line1}, ${SITE.address.line2}, Sri Lanka`;
+const MAP_QUERY = `${SITE.address.full}, ${SITE.address.country}`;
 const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=15&output=embed`;
 
 export default function ContactPage() {
@@ -95,7 +95,7 @@ export default function ContactPage() {
           <SectionHeading
             eyebrow="The Estate"
             title="Where We Make It"
-            subtitle={`${SITE.address.line1}, ${SITE.address.line2}.`}
+            subtitle={`${SITE.address.full}.`}
             align="center"
           />
 
