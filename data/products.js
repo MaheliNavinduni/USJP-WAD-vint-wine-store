@@ -64,14 +64,14 @@ export const products = [
     longDescription:
       'Our Heritage Red is built from strawberries picked at full ripeness and fermented slowly in small batches. The result is a wine that keeps the brightness of fresh fruit while gaining the depth and roundness of a proper table red — generous on the nose, soft through the middle, and clean on the finish.',
     flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
-    serving: { label: 'Lightly Chilled', tempF: '55-60°F', tempC: '12-16°C' },
+    serving: { label: 'Slightly Chilled', tempF: '60-65°F', tempC: '15-18°C' },
     ingredients:
       'Made with fresh strawberries, sugar, water, and yeast. Strawberry wine is a fruit-based wine enjoyed around the world, inspired by traditional fruit-winemaking practices carried through generations of home cellars.',
     servingSuggestions: {
       foodPairings:
         'Beautiful alongside desserts and soft cheeses. Ideal with berry tarts, dark chocolate, or a simple plate of fresh fruit after dinner.',
       temperature:
-        'Serve at 55-60°F (12-16°C). A short 20 minutes in the fridge lifts the fruit and sharpens the finish without dulling the aroma.',
+        'Serve at 60-65°F (15-18°C). Give it a short rest after opening to let the fruit come forward.',
     },
     pairings: [PAIRING.darkChocolate, PAIRING.freshBerries, PAIRING.softCheese, PAIRING.darkBerryTart],
   },
@@ -97,14 +97,14 @@ export const products = [
     longDescription:
       'Classic Blanc is our lightest expression — pressed gently, fermented cool, and bottled early to hold on to its aromatics. Expect lime zest and orange blossom on the nose, a taut and clean palate, and a dry finish that makes it an easy partner for food.',
     flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
-    serving: { label: 'Well Chilled', tempF: '45-50°F', tempC: '7-10°C' },
+    serving: { label: 'Slightly Chilled', tempF: '60-65°F', tempC: '15-18°C' },
     ingredients:
       'Made from white grapes, sugar, water, and yeast. White wine has a long history in European winemaking regions, especially France, Italy, and Germany, and remains the most food-friendly style in any cellar.',
     servingSuggestions: {
       foodPairings:
         'A natural match for lighter dishes. Excellent with grilled seafood, roast chicken, fresh salads, or young, creamy cheeses.',
       temperature:
-        'Serve at 45-50°F (7-10°C), straight from the fridge. No decanting needed — this wine is at its best the moment it is poured.',
+        'Serve at 60-65°F (15-18°C). No decanting needed — this wine is at its best shortly after it is poured.',
     },
     pairings: [PAIRING.seafood, PAIRING.roastChicken, PAIRING.softCheese, PAIRING.tropicalFruit],
   },
@@ -163,14 +163,14 @@ export const products = [
     longDescription:
       'Island King is the wine we are proudest of. Made from Sri Lankan king coconut water, it is inspired by the tropical heritage of the island and offers a naturally refreshing, fruity character you will not find anywhere else. Delicate, golden, and best shared on a warm evening.',
     flavour: { sweetness: 55, acidity: 40, body: 90, fruitiness: 88 },
-    serving: { label: 'Well Chilled', tempF: '45-50°F', tempC: '7-10°C' },
+    serving: { label: 'Slightly Chilled', tempF: '60-65°F', tempC: '15-18°C' },
     ingredients:
       'Made from Sri Lankan king coconut water, sugar, and yeast. King coconut wine is inspired by the tropical heritage of Sri Lanka and offers a naturally refreshing and fruity character unique to the island.',
     servingSuggestions: {
       foodPairings:
         'Made for island food. Try it with spiced curries, grilled seafood, tropical fruit, or simply on its own over ice on a warm evening.',
       temperature:
-        'Serve at 45-50°F (7-10°C), thoroughly chilled. Best enjoyed within a day of opening while the aromatics are at their brightest.',
+        'Serve at 60-65°F (15-18°C). Best enjoyed within a day of opening while the aromatics are at their brightest.',
     },
     pairings: [PAIRING.spicedCurry, PAIRING.seafood, PAIRING.tropicalFruit, PAIRING.freshBerries],
   },
